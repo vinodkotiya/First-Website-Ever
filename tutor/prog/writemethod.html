@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <title>writemethod</title>
+</head>
+<body>
+<font color="#ff0000">//an alternative approach to file i/o for objects is
+to write file handling<br>
+//methods for object classes rather than overloading&gt;&gt;&lt;&lt;.<br>
+//this is simpler b/c we can refer directly to the attributes of the object<br>
+//inside its method rather than having to pass a referance to the object<br>
+//to an ovrlded operator</font><br>
+<br>
+#include&lt;fstream.h&gt;<br>
+#include&lt;conio.h&gt;<br>
+#include&lt;string.h&gt;<br>
+<br>
+class person<br>
+{<br>
+ char name[20];<br>
+ char address[25];<br>
+ char telno[15];<br>
+public:<br>
+ char* getname();<br>
+ char* getaddress();<br>
+ char* gettelno();<br>
+ void setname(char* name_in);<br>
+ void setaddress(char* address_in);<br>
+ void settelno(char* telno_in);<br>
+ void setall(char* all);<br>
+ void setdata();<br>
+ void showdata();<br>
+ void writetofile(ofstream&amp; file_out);<br>
+ void readfile(ifstream&amp; file_in);<br>
+};<br>
+<br>
+char* person::getname()<br>
+{<br>
+ return name;<br>
+}<br>
+char* person::getaddress()<br>
+{<br>
+ return address;<br>
+}<br>
+char* person::gettelno()<br>
+{<br>
+ return telno;<br>
+}<br>
+void person::setname(char* name_in)<br>
+{<br>
+ strncpy(name,name_in,19);<br>
+}<br>
+void person::setaddress(char* address_in)<br>
+{<br>
+ strncpy(address,address_in,24);<br>
+}<br>
+void person::settelno(char* telno_in)<br>
+{<br>
+ strncpy(telno,telno_in,14);<br>
+}<br>
+void person::setdata()<br>
+{<br>
+ char temp_char;<br>
+ cout&lt;&lt;"\nEnter name";<br>
+ cin.get(name,20);<br>
+ cin.get(temp_char);<br>
+ cout&lt;&lt;"\nEnter address";<br>
+ cin.get(address,25);<br>
+ cin.get(temp_char);<br>
+ cout&lt;&lt;"\nEnter tel no";<br>
+ cin.get(telno,15);<br>
+ cin.get(temp_char);<br>
+}<br>
+void person::showdata()<br>
+{<br>
+ cout&lt;&lt;"\nName: "&lt;&lt;name;<br>
+ cout&lt;&lt;"\nAddress : "&lt;&lt;address;<br>
+ cout&lt;&lt;"\tTelno : "&lt;&lt;telno&lt;&lt;endl;<br>
+}<br>
+<font color="#ff0000">//method for writing out attributes as seperate records.method
+uses referance<br>
+//to an ofstream object but has direct acess to the attributes of the person<br>
+//object thus simplifying the syntax each attribute is written out as a<br>
+//seperate record</font><br>
+void person::writetofile(ofstream&amp; file_out)<br>
+{<br>
+ file_out&lt;&lt;name&lt;&lt;endl;<br>
+ file_out&lt;&lt;address&lt;&lt;endl;<br>
+ file_out&lt;&lt;telno&lt;&lt;endl;<br>
+}<br>
+<font color="#ff0000">//method for reading back records representing individual
+attribute values.<br>
+// a referance to an ifstream object is used and values are read directly<br>
+//into the attributes via the 'get method which is able to read embedded<br>
+//spaces. the single char version of get is used to step over the \n in stream</font><br>
+void person :: readfile(ifstream&amp; file_in)<br>
+{<br>
+<br>
+ char temp_char;<br>
+ file_in.get(name,20);<br>
+ file_in.get(temp_char);<br>
+ file_in.get(address,25);<br>
+ file_in.get(temp_char);<br>
+ file_in.get(telno,20);<br>
+ file_in.get(temp_char);<br>
+}<br>
+void main()<br>
+{<br>
+ clrscr();<br>
+ person p[5];<br>
+ char choice;<br>
+ cout&lt;&lt;"\nDo you want to enter data (y/n)?:&nbsp; ";<br>
+ cin&gt;&gt;choice;<br>
+ if(choice == 'y')<br>
+ {<br>
+&nbsp; ofstream out("c:\\cdata\\person.vin");<br>
+&nbsp; for(int i=0;i&lt;5;i++)<br>
+&nbsp; {<br>
+ &nbsp; p[i].setdata();<br>
+ &nbsp; p[i].writetofile(out);<br>
+&nbsp; }<br>
+ &nbsp; out.close();<br>
+ }<br>
+&nbsp; person newp[5];<br>
+ ifstream in("c:\\cdata\\person.vin");<br>
+ for(int i=0;i&lt;5;i++)<br>
+ {<br>
+&nbsp; newp[i].readfile(in);<br>
+&nbsp; newp[i].showdata();<br>
+ }<br>
+&nbsp; in.close();<br>
+&nbsp; getch();<br>
+}<br>
+<br>
+</body>
+</html>

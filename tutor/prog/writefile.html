@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <title>writefile</title>
+</head>
+<body>
+/* READFILE.*&nbsp; Borland C++ 3.0<br>
+<br>
+ &nbsp; Copywrite (c) 2001 - ? VINOD KOTIYA Enternational. All rights <br>
+<br>
+unreserved.<br>
+<br>
+ &nbsp; From the command line, use:<br>
+<br>
+*/<br>
+#include&lt;iostream.h&gt;<br>
+#include&lt;fstream.h&gt;<br>
+#include&lt;conio.h&gt;<br>
+#include&lt;string.h&gt;<br>
+void main()<br>
+{<br>
+ clrscr();<br>
+ char file[20] = {"c:\\"},nm1[10],str[80];<br>
+ cout&lt;&lt;"\nEnter file name";<br>
+ cin&gt;&gt;nm1;<br>
+ strcat(file,nm1);<br>
+ strcat(file,".vin");<br>
+ cout&lt;&lt;endl&lt;&lt;file;<br>
+ ofstream out(file);<br>
+ cout&lt;&lt;"\nEnter till !";<br>
+ do{<br>
+&nbsp; cout&lt;&lt;":";<br>
+&nbsp; cin&gt;&gt;str;<br>
+&nbsp; out&lt;&lt;str&lt;&lt;endl;<br>
+ }while(*str != '!');<br>
+ out.close();<br>
+ getch();<br>
+}
+</body>
+</html>

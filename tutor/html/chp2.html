@@ -1,0 +1,254 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY
+ BGCOLOR="#0044ff"
+ TEXT="#000000"
+ LINK="#3333DD"
+ VLINK="#3333DD"
+ ALINK="#FF0000">
+<font color = yellow size = 6><center>Learn MS-Dos  </center></font>
+<CENTER>
+<TABLE CELLSPACING=0 CELLPADDING=60 BORDER=0 WIDTH=90% BGCOLOR="#FFFFFF">
+<TR>
+<TD><pre>
+<b><font size="4" color="#00FFFF"><a href="chp1.html">&lt;&lt;--BACK</a></font></b>							
+<b><font size="4" color="#00FFFF"><a href="chp3.html">NEXT -&gt;&gt;</a></font></b><br><br>
+</pre>
+
+<FONT FACE="georgia,verdana,arial,helvetica">
+
+FILE STRUCTURE IN MS DOS</font></b></u>
+
+</PRE>
+<PRE>                   <font color="#0000FF"> <font size="3">Directories and Subdirectories</font></font>
+
+
+
+</PRE>
+<PRE>A disk can hold several hundreds of files. Organizing files into
+
+</PRE>
+<PRE>directories and subdirectories on a  disk is like storing office
+
+</PRE>
+<PRE>files in drawers (directories) and its compartments (subdirecto-
+
+</PRE>
+<PRE>ries) within a file cabinet (disk). 
+
+
+</PRE>
+<PRE>Generally, a directory would contain a group of related files.
+
+
+</PRE>
+<PRE>  If you have  several reports like daily, weekly, monthly reports
+</PRE>
+<PRE>and expense statements like fixed expenses, daily expenses, then
+
+</PRE>
+<PRE>you can create two subdirectories REPORT and EXPENSE. 
+
+</PRE>
+<PRE>The  daily, weekly, monthly  reports can  then  be stored in the
+
+</PRE>
+<PRE>REPORT subdirectory.
+
+</PRE>
+<PRE>The  fixed,  daily   expenses   can  be  stored  in  the  EXPENSE
+
+</PRE>
+<PRE>subdirectory.</PRE>
+<PRE>                         <font size="3" color="#0000FF">  Files</font></PRE>
+<PRE>                          
+
+
+</PRE>
+<PRE>Each file in MS-DOS is uniquely identified by its name and its
+
+</PRE>
+<PRE>location. The location in turn has two components, the logical
+
+</PRE>
+<PRE>drive that  contains  the file  and the directory on the drive
+
+</PRE>
+<PRE>where the file name can be found.
+
+</PRE>
+<PRE>The string specifying the filename, its drive, and its direct-
+
+</PRE>
+<PRE>ory is called as the path.
+
+</PRE>
+<PRE>                         <font size="3" color="#0000FF">The ROOT Directory</font>
+
+
+</PRE>
+<PRE>Every disk has two kinds of directories the ROOT directory and
+
+</PRE>
+<PRE>OTHER subdirectories.
+
+</PRE>
+<PRE>The ROOT directory is always present and subdirectories of ROOT
+
+</PRE>
+<PRE>directory can  be created and nested to any level.
+
+</PRE>
+<PRE>If a directory  is created within a directory then it is called
+
+</PRE>
+<PRE>a subdirectory. Therefore, except the ROOT directory, all other
+
+</PRE>
+<PRE>directories are subdirectories.</PRE>
+<PRE>                     </PRE>
+<PRE>The ROOT directory is denoted by a backslash (\). All directories,
+
+</PRE>
+<PRE>except the ROOT, must be given a name.
+
+
+</PRE>
+<PRE>A directory can contain files  and/or subdirectories.
+
+
+                    <font size="3" color="#0000FF"> Current Drive/Directory</font>
+
+
+</PRE>
+<PRE>The  current drive  refers  to the  drive the user is currently
+
+</PRE>
+<PRE>working on.
+
+</PRE>
+<PRE>For example, A:, B:, C: etc.
+
+
+</PRE>
+<PRE>Similarly, the current directory refers to the directory within
+
+</PRE>
+<PRE>which the user is currently working.
+
+</PRE>
+<PRE>For example, \, \DBASE, \LOTUS\DATA etc.
+
+
+</PRE>
+<PRE>MS-DOS keeps track of the current drive, i.e. A: for the floppy
+
+</PRE>
+<PRE>disk  or  C:  for the hard disk, and uses this information as the 
+
+</PRE>
+<PRE>default drive when file specifications do not include an explicit
+
+</PRE>
+<PRE>drive name. Similarly,  MS-DOS  maintains a current directory for
+
+</PRE>
+<PRE>each logical drive.
+
+</PRE>
+<PRE>The organization of the directories, the  subdirectories, and the
+
+</PRE>
+<PRE>files is called the directory tree or the directory structure.</PRE>
+<PRE>                     <font size="3" color="#0000FF">Absolute and Relative Path</font>
+
+
+
+</PRE>
+<PRE>You can refer to a particular file or directory on a drive by either
+
+
+</PRE>
+<PRE># specifying its location relative to the ROOT directory -</PRE>
+<PRE>  ABSOLUTE PATH
+
+
+</PRE>
+<PRE># or by specifying its location relative to the current directory -</PRE>
+<PRE>  RELATIVE PATH
+
+
+The  Path  is specified by giving the list of subdirectories
+
+</PRE>
+<PRE>separated by a backslash (\). 
+
+</PRE>
+<PRE>The Absolute Path always begins with the backslash (ROOT - \)
+
+</PRE>
+<PRE>building upto the desired file or subdirectory.
+
+
+</PRE>
+<PRE>The Relative Path should NEVER begin with the backslash
+
+</PRE>
+<PRE>(ROOT - \).
+
+
+</PRE>
+<PRE>            The drive or    ³Root Directory³ or          ³(Volume Label)³  </PRE>
+<PRE>			|</PRE>
+<PRE>	______________  | ________________</PRE>
+<PRE>	|				|</PRE>
+<PRE>     Subdirectory1		 Subdirectory2</PRE>
+<PRE>	|				| ---------------- |</PRE>
+<PRE>      File1.vin			      File2.vin        File3.vin</PRE>
+<PRE>     The  absolute  path   for   File2  in  the  above  tree  structure  is</PRE>
+<PRE>     <b>  C:\Subdirectory2\File2.vin </b></PRE>
+<PRE>    and can  be referred to  as  such regardless of  the current directory.
+    let  if  for  example  you  are currently  in  Subdirectory2  then</PRE>
+<PRE>    the  relative  path  of File2 would</PRE>
+<PRE>      File2.vin    simply.
+</PRE>
+<PRE>                <font size="3" color="#0000FF"> Rules for Naming a File/Directory
+</font>
+
+</PRE>
+<PRE>A filename/directory  consists of 2 parts : a primary name and
+
+</PRE>
+<PRE>an extension. The extension (secondary name) is optional. 
+
+</PRE>
+<PRE>The following rules need to be observed :
+
+</PRE>
+<PRE># The primary name should not exceed 8 characters in length.
+
+</PRE>
+<PRE># The extension should not exceed 3 characters in length.
+
+</PRE>
+<PRE># Special characters such as &gt; &lt; , . \ / * ? | and spaces cannot
+
+</PRE>
+<PRE>  be used as a part of the filename or extension.</PRE>
+<PRE>
+<b><font size="4" color="#00FFFF"><a href="chp1.html">&lt;&lt;--BACK</a></font></b>							
+<b><font size="4" color="#00FFFF"><a href="chp3.html">NEXT -&gt;&gt;</a></font></b>
+</pre>
+<a href="index.html"><font size="4">INDEX</font></a>
+</FONT>
+</TD>
+</TR>
+</TABLE>
+</CENTER>
+
+</TABLE>
+
+</BODY>
+</HTML>

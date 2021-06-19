@@ -1,0 +1,81 @@
+<!---DocType HTML VINOD KOTIYA s-2 Shrimaya Apartment Sector-B/363 Sarvdharm Colony Bhopal-42.Fone +91-0755-2794428 --->
+<HTML>
+      <HEAD><TITLE> VIN Script Generator </TITLE>
+
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// --->
+<!---                 COPY THE SCRIPT FROM HERE AND APPLY ON YOUR PAGE INSIDE  HEAD --->
+<!--- Contact me for more scripts,source code,viruses,softwares at vinodkotiya24@rediffmail.com --> 
+ 
+<script language="JavaScript">
+<!-- E-mail Stalker Script by kurt.grigg@virgin.net
+//Stuff to change!--
+msg="vinodkotiya.tripod.com";
+mail="http:\\vinodkotiya.tripod.com";
+speed=3;
+fsze="3";
+
+fnt="Verdana";
+
+//----------------------------------
+
+Y=0,X=0,my=0,mx=0,angle=0,dy=0,dx=0,tmr=null;
+ns=(document.layers)?1:0;
+off=(document.layers)?'hide':'hidden';
+on=(document.layers)?'show':'visible';
+if (ns)
+document.write('<layer name=n top=0 left=0><font face='+fnt+' size='+fsze+'><a href='+mail+'>'+msg+'</a></font></layer>');
+else{
+document.write('<div id="c" style="position:absolute"><div style="position:relative">');
+document.write('<div id="i" style="position:absolute;width:200px;height:30px"><font face='+fnt+' size='+fsze+'><a href='+mail+'>'+msg+'</a></font></div>');
+document.write('</div></div>');
+} 
+if (ns){
+window.captureEvents(Event.MOUSEMOVE);
+function nMouse(evnt){                               
+my=evnt.pageY+20;mx=evnt.pageX
+}
+}
+else{
+function iMouse(){
+my=event.y+20;mx=event.x;
+}
+}
+function stalk(){
+if (ns) window.onMouseMove=nMouse;
+else {document.onmousemove=iMouse;c.style.top=document.body.scrollTop}
+var layer=(document.layers)?document.n:i.style;
+Y=my-dy;X=mx-dx;
+angle=Math.round(Math.atan2(Y,X)*180/Math.PI);
+if (angle < 0) angle += 360;
+y = Math.round(speed*Math.sin(angle*Math.PI/180));x = Math.round(speed*Math.cos(angle*Math.PI/180));
+dy+=y;dx+=x;                                                                    
+if ((dy > my-speed*2) && (dx > mx-speed*2) && (dy < my+speed*2) && (dx < mx+speed*2))
+{clearTimeout(tmr);layer.visibility=off;}
+else{layer.visibility=on;layer.top=dy;layer.left=dx}
+tmr=setTimeout('stalk()',10);
+}
+stalk();
+//-->
+</script>
+
+</HEAD> 
+
+
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// --->
+<!---                 COPY THE SCRIPT UP TO BEFORE /HEAD AND APPLY ON YOUR PAGE --->
+
+     <BODY bgcolor = #000000 text = #ffff00>   
+
+
+    <H4>Link Stalker<H4>
+<h6>Third party scripts</h6>
+<center><h3>1 : To get the script click on view---->> Source </h3></center>
+<center><h3>The html coding will appear  </h3></center>
+<center><h3>Copy the script Source placed between HEAD tag and paste on your page </h3></center>
+<center><h3>2 :  Or save this page on your harddisk by File->> SaveAs  </h3></center>
+
+
+<font color = red size = 4> To get  more scripts,source code,viruses,softwares contact at vinodkotiya24@rediffmail.com </font>
+
+<hr><font color = white > <center><a href ="..\index.html"> HOME  </a>| <a href ="..\source.html"> BACK </a> | <a href ="..\stand.html"> STAND ALONES </a>| <a href ="..\aboutme.html"> About </a> </center></font><hr> </BODY> 
+ </HTML>

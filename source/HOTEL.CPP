@@ -1,0 +1,2072 @@
+#include<conio.h>
+#include<iostream.h>
+#include<fstream.h>
+#include<stdlib.h>
+#include<stdio.h>
+#include<iomanip.h>
+#include<graphics.h>
+#include<string.h>
+#include<dos.h>
+
+
+
+
+		class hotel
+		{
+		private:
+		struct customer
+		{
+		char name[20];
+		int age;
+		int house_no;
+		char colony[20];
+		char city[15];
+		char state[20];
+		int room_no;
+		int date;
+		int month;
+		int year;
+		char* day;
+		int mark;
+		char flag7;
+		}p;
+		   char ashu[10];
+			      fstream file;
+
+		public:
+
+			      hotel();
+		void add_customer();
+		void hotel_details();
+		void close_record();
+		void screen();
+		void screen1();
+		void search_name();
+		void search_city();
+		void search_state();
+		void search_date();
+		void bill();
+		void del_search_name();
+		void del_search_city();
+		void del_search_state();
+		void del_search_date();
+		void exit();
+		int  c_day();
+		};
+
+		void main()
+		{
+		int gd=DETECT,gm;
+			      initgraph(&gd,&gm,"c:\\turboc3\\bin");
+			      textcolor(0);
+		 int i,j;
+
+		  settextstyle(1,HORIZ_DIR,4);
+		  setcolor(2);
+	moveto(100,30);outtext("HOTEL vk INTERNATIONAL") ;
+
+
+
+      /* draw the bar */
+      for(i=100,j=0;i<500,j<=100;i=i+5,j++)
+      {
+
+
+		rectangle(610,90,40,140);
+      gotoxy(2,9);cout<<"%"<<j;
+
+       setfillstyle(SOLID_FILL,GREEN);
+	 moveto(100,100);
+      bar(50,100 , i,130);
+      delay(10);
+      setcolor(2);
+     moveto(100,250); outtext("project is loading ");
+     setcolor(2);
+     moveto(350,300); outtext("please wait");
+
+  // getch();
+
+      }
+	 if(j==101)
+	 {
+	 j=0;
+	 cleardevice();
+	 setcolor(2);
+	 moveto(200,100);outtext("WEL *** COME");
+	 setcolor(2);
+	 moveto(280,200);outtext("TO");
+	 setcolor(2);
+	 moveto(100,300);outtext("HOTEL PALASH INTERNATIONAL");
+	 setcolor(2);
+	moveto(100,400); outtext("press any key to continue");
+	 getch();
+	 }
+		int cho;
+		char choice;
+			      hotel h;
+
+		do
+		{
+			      cleardevice();
+			      h.screen();
+			      settextstyle(1,HORIZ_DIR,4);
+			      setcolor(2);
+			      moveto(100,1);outtext("\t\tHOTAL PALASH INTERNATIONAL");
+			      settextstyle(2,HORIZ_DIR,9);
+			      setcolor(2);
+			      setbkcolor(0);
+			      moveto(100,90);outtext("(1):ADD NEW CUSTOMER\n");
+			      moveto(100,120);outtext("(2):DETAILS OF HOTEL\n");
+			      moveto(100,150);outtext("(3):CLOSE CUS_RECORD\n");
+			      moveto(100,180);outtext("(4):SEARCH THE CUSTOMER\n");
+			      moveto(100,210);outtext("(5):CHECTK OUT CUSTOMER &");
+			      moveto(100,240);outtext("    PRINT BILL");
+			      moveto(100,270);outtext("(6):DELETED RECORDS");
+			      moveto(100,300);outtext("(0):EXIT\n");
+			      moveto(100,330);outtext("Your choice:-");
+			      gotoxy(45,23);cin>>choice;
+			      setcolor(2);
+			      cleardevice();
+		switch(choice)
+		{
+		case '1':
+			      h.add_customer();
+		break;
+
+		case '2':
+			      h.hotel_details();
+		break;
+
+		case '3':
+			      h.close_record();
+		break;
+
+		case '4':
+		do
+		{
+			      cleardevice();
+			      h.screen();
+			      settextstyle(1,HORIZ_DIR,4);
+			      setcolor(2);
+			      moveto(100,1);outtext("\t\tHOTAL PALASH INTERNATIONAL");
+			      settextstyle(3,HORIZ_DIR,3);
+			      setcolor(2);
+			      setbkcolor(0);
+			      moveto(100,90);outtext("(1):ACCORDING TO NAME\n");
+			      moveto(100,120);outtext("(2):ACCORDING TO CITY\n");
+			      moveto(100,150);outtext("(3):ACCORDING TO DATE\n");
+			      moveto(100,180);outtext("(4):ACCORDING TO STATE\n");
+			      moveto(100,210);outtext("(0):EXIT\n");
+			      moveto(100,250);outtext("Your choice:-");
+			      gotoxy(35,18);cin>>cho;
+			      setcolor(0);
+		switch(cho)
+		{
+		case 1:
+			      cleardevice();
+			      h.search_name();
+		break;
+
+		case 2:
+			      h.search_city();
+		break;
+
+		case 3:
+			      h.search_date();
+		break;
+
+		case 4:
+			      h.search_state();
+		break;
+
+		case 5:
+			      exit(0);
+		break;
+		}
+
+		}while(cho==1);
+
+		break;
+
+		case '5':
+			       h.bill();
+		break;
+
+		case '6':
+
+					do
+		{
+			      cleardevice();
+			      h.screen();
+			      settextstyle(1,HORIZ_DIR,4);
+			      setcolor(2);
+			      moveto(100,1);outtext("\t\tHOTAL PALASH INTERNATIONAL");
+			      settextstyle(3,HORIZ_DIR,3);
+			      setcolor(2);
+			      setbkcolor(0);
+			      moveto(100,90);outtext("(1):ACCORDING TO NAME\n");
+			      moveto(100,120);outtext("(2):ACCORDING TO CITY\n");
+			      moveto(100,150);outtext("(3):ACCORDING TO DATE\n");
+			      moveto(100,180);outtext("(4):ACCORDING TO STATE\n");
+			      moveto(100,210);outtext("(0):EXIT\n");
+			      moveto(100,250);outtext("Your choice:-");
+			      gotoxy(35,18);cin>>cho;
+			      setcolor(2);
+		switch(cho)
+		{
+		case 1:
+			      cleardevice();
+			      h.del_search_name();
+		break;
+
+		case 2:
+			      h.del_search_city();
+		break;
+
+		case 3:
+			      h.del_search_date();
+		break;
+
+		case 4:
+			      h.del_search_state();
+		break;
+
+		case 5:
+			      exit(0);
+		break;
+		}
+
+		}while(cho==1);
+
+		break;
+
+
+		case '0':
+
+			       h.exit();
+			       exit(0);
+
+			    }
+
+		}while(choice!=0);
+			      closegraph();
+		}
+
+		   void hotel::hotel()
+		   {
+
+		   file.open("as7.dat",ios::in|ios::out|ios::binary);
+		   file.seekg(0L,ios::beg);
+		   if(!file)
+		     {
+
+		   cout<<"\n"<<"can't open the file";
+		   exit();
+		   }
+		    }
+
+		   void hotel::add_customer()
+	   {
+
+		   int temp_room;
+		   int ch=1,pos,room,odddays1;
+		   de:
+		   cleardevice();
+		   file.seekg(0L,ios::end);
+		   ofstream outfile("as7.dat",ios::in|ios::out|ios::binary);
+		   while(ch==1)
+	   {
+
+
+		   file.seekg(0L,ios::end);
+		   screen1();
+		   setcolor(2);
+		   settextstyle(2,HORIZ_DIR,8);
+		   moveto(10,30);outtext("\n enter the customer name");
+		   gotoxy(55,3);gets(p.name);
+		    x:
+		   moveto(10,60);outtext("\n enter the address(house no.)");
+		   gotoxy(55,5);cin>>p.house_no;
+		    if(p.house_no<=0)
+		    {
+		   moveto(10,60);outtext("invalid house no");
+		   moveto(10,80);outtext("plese enter the valid house no");
+		    getch();
+		    cleardevice();
+		    screen1();
+		    moveto(10,30);outtext("\n enter the customer name");
+		    gotoxy(55,3);cout<<p.name;
+
+		    goto x;
+		    }
+
+		   moveto(10,90);outtext("\n enter the address(colony)");
+		   gotoxy(55,7);gets(p.colony);
+
+		   moveto(10,120);outtext("\n enter the address(city)");
+		   gotoxy(55,9);gets(p.city);
+
+		   moveto(10,150);outtext("\n enter the address(state)");
+		   gotoxy(55,11);gets(p.state);
+		    y:
+		   moveto(10,180);outtext("\n enter the age");
+		   gotoxy(55,13);cin>>p.age;
+		   if(p.age<=0)
+		   {
+		   moveto(10,210);outtext("invalid age plese reenter the valid date0");
+		   getch();
+		   cleardevice();
+		   screen1();
+		   moveto(10,30);outtext("\n enter the customer name");
+		   gotoxy(55,3);cout<<p.name;
+		   moveto(10,60);outtext("\n enter the address(house no.)");
+		   gotoxy(55,5);cout<<p.house_no;
+
+		   moveto(10,90);outtext("\n enter the address(colony)");
+		   gotoxy(55,7);cout<<p.colony;
+
+		   moveto(10,120);outtext("\n enter the address(city)");
+		   gotoxy(55,9);cout<<p.city;
+
+		   moveto(10,150);outtext("\n enter the address(state)");
+		   gotoxy(55,11);cout<<p.state;
+
+		    goto y;
+		    }
+
+		     d:
+		   moveto(10,210);outtext("\n enter the room no.");
+		   gotoxy(55,15);cin>>p.room_no;
+		  temp_room=p.room_no;
+		  /*    file.seekg(0);
+		       while(file.read((char*)&p,sizeof(p)))
+		       {
+		       if(p.room_no==temp_room)
+		       {
+		       cout<<"duplicate";
+		       getch();
+		       goto de;
+		       }
+		       }          */
+		     if(p.room_no<=0 || p.room_no==13)
+		     {
+		     gotoxy(55,17);outtext("\n invalid room no plese enter the valid room no");
+		     getch();
+		     cleardevice();
+		     screen1();
+		   moveto(10,30);outtext("\n enter the customer name");
+		   gotoxy(55,3);cout<<p.name;
+
+		   moveto(10,60);outtext("\n enter the(house no.)");
+		   gotoxy(55,5);cout<<p.house_no;
+
+		   moveto(10,90);outtext("\n enter the address(colony)");
+		   gotoxy(55,7);cout<<p.colony;
+
+		   moveto(10,120);outtext("\n enter the address(city)");
+		   gotoxy(55,9);cout<<p.city;
+
+		   moveto(10,150);outtext("\n enter the address(state)");
+		   gotoxy(55,11);cout<<p.state;
+		   moveto(10,180);outtext("\n enter the age");
+		   gotoxy(55,13);cout<<p.age;
+
+		      goto d;
+		      }
+
+
+		   struct dosdate_t d;
+		    _dos_getdate(&d);
+
+		      p.date=d.day;
+		      p.month=d.month;
+		     p.year=d.year;
+	       //	   moveto(10,330);outtext("\n enter the day:");
+		 //  gotoxy(55,23);gets(p.day);
+		   odddays1=c_day();
+		   if(odddays1==1)
+
+{
+
+ p.day="monday";
+
+}
+
+
+
+if(odddays1==2)
+{
+ p.day="tuesday";
+}
+
+
+if(odddays1==3)
+{
+ p.day="wednesday";
+}
+
+
+if(odddays1==4)
+{
+ p.day="thursday";
+}
+
+
+
+
+if(odddays1==5)
+{
+ p.day=" friday";
+}
+
+
+
+
+if(odddays1==6)
+{
+ p.day=" saturday";
+ }
+
+
+
+if(odddays1==0)
+{
+ p.day="sunday";
+}
+
+		      p.flag7=' ';
+
+		   file.write((char*)&p,sizeof(p));
+		    moveto(15,370);outtext("add another record?(1/0)");
+
+		  gotoxy(55,25);cin>>ch;
+		  moveto(15,410);outtext("\npress any  key to continue...");
+		  getch();
+		  cleardevice();
+		  }
+
+		 file.clear();
+		  }
+
+
+
+
+
+
+
+
+
+
+		 void hotel::hotel_details()
+	   {
+		 int i=0,counter=0;
+		 char age1[5],room1[5],i1[5];
+		 char house[5],month1[5],year1[5],date1[5];
+		 int x1,y1;
+		 cleardevice();
+		 moveto(100,1);outtext("\t\tHOTAL PALASH INTERNATIONAL");
+		 file.seekg(0);
+
+		 file.read((char*)&p,sizeof(p));
+
+		 while(!file.eof() )
+	   {
+		   if(p.flag7!='*')
+		   {
+
+		 cleardevice();
+		 moveto(100,1);outtext("\t\tHOTEL PALASH INTERNATIONAL");
+		 screen();
+
+		 counter++;
+		 settextstyle(3,HORIZ_DIR,3);
+		 i++;
+		 itoa(i,i1,10);
+
+		 moveto(100,90);outtext("\n record#");moveto(418,90);outtext(i1);
+
+		 moveto(100,140);outtext("\n name is:");moveto(418,130);outtext(p.name);
+		 itoa(p.house_no,house,10);
+		 moveto(100,190);outtext("\n address is:");moveto(418,180);outtext(house);outtext(",\t\t\t\t");moveto(450,180);outtext(p.colony);
+
+		 moveto(418,210);outtext(p.city);outtext("(");outtext(p.state);outtext(")");
+		 itoa(p.age,age1,10);
+		 moveto(100,250);outtext("\n age is:");moveto(418,250);outtext(age1);
+		itoa(p.room_no,room1,10);
+		 moveto(100,300);outtext("\n room no is:");moveto(418,300);outtext(room1);
+		 itoa(p.date,date1,10);
+		  itoa(p.month,month1,10);
+		  itoa(p.year,year1,10);
+		 moveto(100,350);outtext("\n entry date is:");moveto(418,350);outtext(date1);outtext("/");outtext(month1);outtext("/");outtext(year1);
+
+		 moveto(100,400);outtext("\n day is :");moveto(418,400);outtext(p.day);
+		    }
+		 file.read((char*)&p,sizeof(p));
+	       /* to see the records one by one*/
+		 if(counter==1)
+	   {
+		 moveto(100,1);outtext("\t\tHOTEL PALASH INTERNATIONAL");
+		 getch();
+		 cleardevice();
+		 counter=0;
+	   }
+	   }
+		 file.clear();
+		 screen();
+		 moveto(100,1);outtext("\t\tHOTAL PALASH INTERNATIONAL");
+		 x1=getmaxx()/2;
+		 y1=getmaxy()/3;
+		 circle(x1,y1,50);
+		 ellipse(x1,y1,0,360,3,15);
+		 circle(x1-20,y1-20,5);
+		 circle(x1+20,y1-20,5);
+		 arc(x1,y1+20,180,0,15);
+
+		 moveto(100,270);outtext("\npress any  key to continue...");
+
+		 getch();
+	   }
+
+
+		 void hotel::close_record()
+	   {
+		 moveto(100,1);outtext("\t\tHOTAL PALASH INTERNATIONAL");
+		 char tmpry[20];
+		 file.seekg(0);
+		screen();
+		 int no;//cho=1;
+		 int flag=0 ;
+
+					 moveto(100,100);outtext("enter the room no");
+		 gotoxy(55,8);cin>>no;
+
+		ofstream outfile("temp7.dat",ios::out|ios::binary);
+		file.seekg(0);
+		outfile.seekp(0);
+		while(file.read((char *)&p,sizeof(p)))
+		{
+		if(p.flag7!='*')
+		{
+		 if(p.room_no!=no)
+		 {
+
+
+		outfile.write((char *)&p,sizeof(p));
+		 }
+		 else
+		 {
+	      flag=1;
+		 strcpy(tmpry,p.name);
+
+		 }
+		 }
+		 }
+
+		  if(flag==1)
+		 {
+		 moveto(100,200);outtext("MR. ");gotoxy(20,14);outtext(tmpry);outtext("     HAS CHECKED OUT");
+		 }
+		  else
+		 {
+		 moveto(100,200);outtext("ROOM IS ALREADY EMPTY");
+		  getch();
+		 }
+
+
+
+
+
+		 outfile.close();
+		 file.close();
+		 remove("as7.dat");
+		 rename("temp7.dat","as7.dat");
+		 file.open("as7.dat",ios::in|ios::out|ios::nocreate|ios::binary);
+
+		 file.seekg(0);
+
+
+		 getch();
+		 }
+
+	   void hotel::search_name()
+		 {
+
+		  cleardevice();
+		  char house[5],month1[5],year1[5],date1[5];
+		  char name1[20],cou[3],age1[3],roomno1[3];
+		  int choice=1,a,flag,counter=0;
+		  file.seekg(0);
+		  while(choice==1)
+		  {
+		  flag=0;
+		  counter=0;
+		  moveto(100,1);outtext("\t\tHOTAL PALASH INTERNATIONAL");
+		  screen();
+
+		  file.seekg(0);
+		  moveto(100,90);outtext("\n enter the name : ");
+		  gotoxy(54,7);gets(name1);
+
+		  while(file.read((char*)&p,sizeof(p)))
+		 {
+		    if(p.flag7!='*')
+		    {
+		  a=strcmp(name1,p.name);
+
+		  if(a==0)
+		  {
+		flag=1;
+		counter++;
+		}
+		}
+		}
+		file.clear();
+		if(counter>0)
+		{
+		 itoa(counter,cou,10);
+	       moveto(100,130);outtext("no. of person of same name is:- ");outtext(cou);
+
+	       moveto(100,150);outtext("\n Press enter to see the records");
+		getch();
+		}
+
+
+		 file.seekg(0L);
+		while(file.read((char*)&p,sizeof(p)))
+		 {
+	       a=strcmp(name1,p.name);
+
+		if(a==0)
+		{
+		  if(p.flag7!='*')
+		     {
+		cleardevice();
+		screen();
+
+	       moveto(50,100);outtext("\n name is:");moveto(300,100);outtext(p.name);
+		itoa(p.house_no,house,10);
+	       moveto(50,150);outtext("\n address is:");moveto(300,150);outtext(house);outtext(",");moveto(320,145);outtext(p.colony);
+
+	       moveto(300,170);outtext(p.city);outtext("(");outtext(p.state);outtext(")");
+	       itoa(p.age,age1,10);
+	       moveto(50,210);outtext("\n age is:");moveto(300,210);outtext(age1);
+
+	       moveto(50,250);outtext("\n room no is:");moveto(300,250);outtext(roomno1);
+
+		 itoa(p.date,date1,10);
+		  itoa(p.month,month1,10);
+		  itoa(p.year,year1,10);
+	      moveto(50,310);outtext("\n entry date is:");moveto(300,310);outtext(date1);outtext("/");outtext(month1);outtext("/");outtext(year1);
+	       moveto(50,350);outtext("\n day is :");moveto(300,350);outtext(p.day);
+
+		   getch();
+
+		  }
+		}
+
+		}
+		if(flag!=1)
+		{
+		moveto(100,160);outtext("not found\n");
+		 }
+		moveto(75,390);outtext("want to search more?(1/0).");
+		gotoxy(60,25.5);cin>>choice;
+		file.clear();
+	     cleardevice();
+		}
+		}
+
+
+		void hotel::exit()
+		{
+		file.close();
+		}
+
+
+		       void hotel::screen()
+		       {
+
+
+
+		     int i,j;
+
+		     for(i=45;i<425;i=i+7)
+		     {
+		     setpalette(0,BLACK);
+		     setcolor(2);
+		     moveto(45,i);outtext("*");
+		     moveto(600,i);outtext("*");
+		     }
+		     for(j=50;j<=600;j=j+7)
+		     {
+		     moveto(j,40);outtext("*");
+		     moveto(j,430);outtext("*");
+		     }
+		     }
+
+		  void hotel::search_city()
+	     {
+		  cleardevice();
+		  char month1[5],year1[5],date1[5],house[5],age1[3];
+		char room1[20],cou[3],city1[20];
+		int choice=1,a,flag,counter;
+		file.seekg(0);
+		while(choice==1)
+		{
+		counter=0;
+		flag=0;
+		moveto(100,1);outtext("\t\tHOTAL PALASH INTERNATIONAL");
+		screen();
+
+		 file.seekg(0);
+		moveto(100,90);outtext("\n enter the city name : ");
+		gotoxy(54,7);gets(city1);
+
+		while(file.read((char*)&p,sizeof(p)))
+		 {
+		 if(p.flag7!='*')
+		     {
+		  a=strcmp(city1,p.city);
+
+		  if(a==0)
+		  {
+		flag=1;
+		counter++;
+		}
+		}
+		}
+		file.clear();
+		if(counter>0)
+		{
+		  itoa(counter,cou,10);
+	       moveto(100,130);outtext("no. of person of same city :- ");outtext(cou);
+
+	       moveto(100,150);outtext("\n Press enter to see the records");
+		getch();
+		}
+
+
+		 file.seekg(0L);
+		while(file.read((char*)&p,sizeof(p)))
+		 {
+	       a=strcmp(city1,p.city);
+
+		if(a==0)
+		{
+		if(p.flag7!='*')
+		     {
+		flag=1;
+		cleardevice();
+		screen();
+
+	       moveto(50,100);outtext("\n name is:");moveto(300,100);outtext(p.name);
+	      itoa(p.house_no,house,10);
+	       moveto(50,150);outtext("\n address is:");moveto(300,150);outtext(house);outtext(",");moveto(320,145);outtext(p.colony);
+
+	       moveto(300,170);outtext(p.city);outtext("(");outtext(p.state);outtext(")");
+	      itoa(p.age,age1,10);
+	       moveto(50,210);outtext("\n age is:");moveto(300,210);outtext(age1);
+	       itoa(p.room_no,room1,10);
+	       moveto(50,250);outtext("\n room no is:");moveto(300,250);outtext(room1);
+
+
+	itoa(p.date,date1,10);
+		  itoa(p.month,month1,10);
+		  itoa(p.year,year1,10);
+		 moveto(50,310);outtext("\n entry date is:");moveto(300,310);outtext(date1);outtext("/");outtext(month1);outtext("/");outtext(year1);
+
+	       moveto(50,350);outtext("\n day is :");moveto(300,350);outtext(p.day);
+
+	       getch();
+		}
+
+		}
+
+		}
+		if(flag!=1)
+		{
+		moveto(100,160);outtext("not found\n");
+		 }
+		moveto(75,390);outtext("want to search more?(1/0).");
+		gotoxy(60,25.5);cin>>choice;
+		file.clear();
+		cleardevice();
+		}
+	     }
+	    void hotel::search_date()
+	     {
+		 cleardevice();
+		screen();
+		 moveto(100,1);outtext("\t\tHOTAL PALASH INTERNATIONAL");
+		 int d,m,y,counter;
+		 int choice=1,flag;
+		 char count[5],date1[5],month1[5],year1[5],cou[3],age1[3],house1[3],room1[3];
+		 file.seekg(0);
+	     while(choice==1)
+	     {
+		 counter=0;
+		 flag=0;
+
+		 cleardevice();
+		 screen();
+		   moveto(100,1);outtext("\t\tHOTAL PALASH INTERNATIONAL");
+		 file.seekg(0);
+		 moveto(100,90);outtext("\n enter the date(dd) : ");
+		 gotoxy(54,7);cin>>d;
+		 moveto(100,120);outtext("\n enter the month(mm) : ");
+		 gotoxy(54,9);cin>>m;
+		 moveto(100,150);outtext("\n enter the year : ");
+		 gotoxy(54,11);cin>>y;
+	     while(file.read((char*)&p,sizeof(p)))
+	     {
+
+	     if(p.flag7!='*')
+		     {
+	     if(p.date==d&&p.month==m&&p.year==y)
+	     {
+		counter++;
+		flag=1;
+
+	     }
+	     }
+	     }
+	     if(counter>0)
+	     {
+	     itoa(counter,cou,10);
+	       moveto(50,190);outtext("no. of person of who came on same date:- ");outtext(cou);
+
+	       moveto(100,230);outtext("\n Press enter to see the records");
+		getch();
+	     }
+
+
+		file.clear();
+
+		file.seekg(0L);
+	     while(file.read((char*)&p,sizeof(p)))
+	     {
+	     if(p.flag7!='*')
+		     {
+
+
+
+	     if(p.date==d&&p.month==m&&p.year==y)
+	     {
+		cleardevice();
+		moveto(100,1);outtext("\t\tHOTAL PALASH INTERNATIONAL");
+		screen();
+	       moveto(50,100);outtext("\n name is:");moveto(300,100);outtext(p.name);
+	       itoa(p.house_no,house1,10);
+	       moveto(50,150);outtext("\n address is:");moveto(300,150);outtext(house1);outtext(",");moveto(320,145);outtext(p.colony);
+
+	       moveto(300,170);outtext(p.city);outtext("(");outtext(p.state);outtext(")");
+		 itoa(p.age,age1,10);
+	       moveto(50,210);outtext("\n age is:");moveto(300,210);outtext(age1);
+		itoa(p.room_no,room1,10);
+	       moveto(50,250);outtext("\n room no is:");moveto(300,250);outtext(room1);
+
+
+	       itoa(p.date,date1,10);
+	       itoa(p.month,month1,10);
+	       itoa(p.year,year1,10);
+	       moveto(50,310);outtext("\n entry date is:");moveto(300,310);outtext(date1);outtext("/");outtext(month1);outtext("/");outtext(year1);
+
+	       moveto(50,350);outtext("\n day is :");moveto(300,350);outtext(p.day);
+	       moveto(50,380);outtext("press any key to countinue..");
+		 getch();
+	       }
+	       }
+		}
+
+
+		if(flag!=1)
+		{
+		moveto(100,200);outtext("not found\n");
+		getch();
+		 }
+		 cleardevice();
+		 screen();
+		 moveto(100,1);outtext("\t\tHOTAL PALASH INTERNATIONAL");
+		 moveto(100,100);outtext("want to search more?(1/0).");
+		gotoxy(55,8);cin>>choice;
+		getch();
+		file.clear();
+	       //	cleardevice();
+		}
+
+	     }
+
+	    void hotel::search_state()
+	    {
+	    char date1[5],month1[5],year1[5],cou[3],age1[3],house1[3],room1[3];
+		cleardevice();
+		char state1[20];
+		int choice=1,a,flag,counter;
+		file.seekg(0);
+		while(choice==1)
+		{
+		counter=0;
+		flag=0;
+		moveto(100,1);outtext("\t\tHOTAL PALASH INTERNATIONAL");
+		screen();
+
+		 file.seekg(0);
+		moveto(100,90);outtext("\n enter the state name : ");
+		gotoxy(54,7);gets(state1);
+
+		while(file.read((char*)&p,sizeof(p)))
+		 {
+		   if(p.flag7!='*')
+		     {
+		  a=strcmp(state1,p.state);
+
+		  if(a==0)
+		  {
+		flag=1;
+		counter++;
+		}
+		}
+		}
+		file.clear();
+		if(counter>0)
+		{
+		itoa(counter,cou,10);
+	       moveto(50,130);outtext("no. of person of same from same state:- ");outtext(cou);
+
+	       moveto(100,150);outtext("\n Press enter to see the records");
+		getch();
+		}
+
+
+		 file.seekg(0L);
+		while(file.read((char*)&p,sizeof(p)))
+		 {
+
+		if(a==0)
+		{
+
+		if(p.flag7!='*')
+		     {
+	       a=strcmp(state1,p.state);
+
+		flag=1;
+		cleardevice();
+		screen();
+
+	       moveto(50,100);outtext("\n name is:");moveto(300,100);outtext(p.name);
+	       itoa(p.house_no,house1,10);
+	       moveto(50,150);outtext("\n address is:");moveto(300,150);outtext(house1);outtext(",");moveto(320,145);outtext(p.colony);
+
+	       moveto(300,170);outtext(p.city);outtext("(");outtext(p.state);outtext(")");
+
+	       moveto(50,210);outtext("\n age is:");moveto(300,210);outtext(age1);
+
+	       moveto(50,250);outtext("\n room no is:");moveto(300,250);outtext(room1);
+
+
+		  itoa(p.date,date1,10);
+		  itoa(p.month,month1,10);
+		  itoa(p.year,year1,10);
+		 moveto(50,310);outtext("\n entry date is:");moveto(300,310);outtext(date1);outtext("/");outtext(month1);outtext("/");outtext(year1);
+
+	       moveto(50,350);outtext("\n day is :");moveto(300,350);outtext(p.day);
+			     getch();
+
+		}
+
+		}
+
+		}
+		if(flag!=1)
+		{
+		moveto(100,160);outtext("not found\n");
+		 }
+		moveto(75,390);outtext("want to search more?(1/0).");
+		gotoxy(50,25.5);cin>>choice;
+		file.clear();
+		cleardevice();
+		}
+	    }
+
+
+
+
+	    void hotel::bill()
+	    {
+
+
+	    int curr_date,curr_month,curr_year,temp=0;
+	    long int pos;
+	    int count=0;
+	    int a,b,result1,i,no,b1,yd,temp1,temp2,flag;
+	    char date1[5],month1[5],year1[5],date2[5],month2[5],year2[5],result2[5];
+	    screen();
+	    moveto(100,70);outtext("enter room no\n");
+	    gotoxy(60,6);cin>>no;
+	    file.open("as7.dat",ios::in|ios::binary);
+
+  file.clear();
+ file.seekg(0);
+
+	    while(file.read((char *)&p,sizeof(p)))
+		{
+		 if(p.room_no==no)
+		 {
+		  p.flag7='*';
+		  pos=count*sizeof(p);
+		  file.seekp(pos,ios::beg);
+		  file.write((char*)&p,sizeof(p));
+		  getch();
+
+		  flag=1;
+
+		  break;
+		  }
+		  count++;
+		  }
+
+		  if(flag!=1)
+		  {
+		  moveto(100,100);outtext("ROOM IS EMPTY");
+		  getch();
+		  cleardevice();
+		  }
+		  else
+		  {
+
+
+				struct dosdate_t d;
+ _dos_getdate(&d);
+
+	    curr_date=d.day;
+	    curr_month=d.month;
+	    curr_year=d.year;
+	      moveto(100,200);outtext("Press enter to print bill");
+	       getch();
+
+if(curr_year>p.year)
+{
+a=0;b1=0;b=0,temp1=0;
+
+
+yd=curr_year-p.year-1;
+temp=yd/4;
+if(p.year%4==0&&p.month<=2)
+{
+temp1=1;
+}
+if(curr_year%4==0&&curr_month>2)
+{
+temp2=1;
+}
+for(i=p.month+1;i<=12;i++)
+{
+if(i==1)
+{
+a=31+a;
+
+}
+if(i==2)
+{
+a=a+28;
+}
+if(i==3)
+{
+a=a+31;
+
+}
+if(i==4)
+{
+a=a+30;
+}
+if(i==5)
+{
+a=a+31;
+}
+if(i==6)
+{
+a=a+30;
+}
+if(i==7)
+{
+a=a+31;
+}
+if(i==8)
+{
+a=a+31;
+}
+if(i==9)
+{
+a=a+30;
+}
+if(i==10)
+{
+a=a+31;
+}
+if(i==11)
+{
+a=a+30;
+}
+if(i==12)
+{
+a=a+31;
+}
+}
+if(p.month==1)
+{
+b=31-p.date;
+
+}
+if(p.month==2)
+{
+b=28-p.date;
+}
+if(p.month==3)
+{
+b=31-p.date;
+
+}
+if(p.month==4)
+{
+b=30-p.date;
+}
+if(p.month==5)
+{
+b=31-p.date;
+}
+if(p.month==6)
+{
+b=30-p.date;
+}
+if(p.month==7)
+{
+b=31-p.date;
+}
+if(p.month==8)
+{
+b=31-p.date;
+}
+if(p.month==9)
+{
+b=30-p.date;
+}
+if(p.month==10)
+{
+b=31-p.date;
+}
+if(p.month==11)
+{
+b=30-p.date;
+}
+if(p.month==12)
+{
+b=31-p.date;
+}
+
+
+for(i=1;i<curr_month;i++)
+{
+if(i==1)
+{
+b1=b1+31;
+}
+if(i==2)
+{
+b1=b1+28;
+}
+if(i==3)
+{
+b1=b1+31;
+
+}
+if(i==4)
+{
+b1=b1+30;
+}
+if(i==5)
+{
+b1=b1+31;
+}
+if(i==6)
+{
+b1=b1+30;
+}
+if(i==7)
+{
+b1=b1+31;
+}
+if(i==8)
+{
+b1=b1+31;
+}
+if(i==9)
+{
+b1=b1+30;
+}
+if(i==10)
+{
+b1=b1+31;
+}
+if(i==11)
+{
+b1=b1+30;
+}
+if(i==12)
+{
+b1=b1+31;
+}
+}
+
+
+double  result1;
+result1=a+b+b1+curr_date+yd*365+temp1+temp+temp2;
+result1=result1*100;
+cleardevice();
+screen1();
+moveto(100,30);outtext("\t\tHOTAL PALASH INTERNATIONAL");
+
+moveto(280,70);outtext("BILL\n");
+moveto(280,90);outtext("----");
+moveto(50,120);outtext("To");
+moveto(80,150);outtext("Mis./Mr.");outtext(p.name);
+itoa(p.date,date1,10);
+itoa(p.month,month1,10);
+itoa(p.year,year1,10);
+moveto(50,180);outtext("\n entry date is:");moveto(400,180);outtext(date1);outtext("/");outtext(month1);outtext("/");outtext(year1);
+
+itoa(curr_date,date2,10);
+itoa(curr_month,month2,10);
+itoa(curr_year,year2,10);
+moveto(50,210);outtext("\n exit date is:");moveto(400,210);outtext(date2);outtext("/");outtext(month2);outtext("/");outtext(year2);
+moveto(50,270);outtext("Total cahrge is:-");gotoxy(50,19);cout<<result1;
+getch();
+
+}
+
+
+
+else
+{
+a=0;b1=0;b=0,temp1=0;
+if(curr_month>p.month)
+{
+
+if(p.year%4==0&&p.month<=2)
+{
+temp1=1;
+}
+
+
+for(i=p.month+1;i<curr_month;i++)
+{
+if(i==1)
+{
+a=31+a;
+
+}
+if(i==2)
+{
+a=a+28;
+}
+if(i==3)
+{
+a=a+31;
+
+}
+if(i==4)
+{
+a=a+30;
+}
+if(i==5)
+{
+a=a+31;
+}
+if(i==6)
+{
+a=a+30;
+}
+if(i==7)
+{
+a=a+31;
+}
+if(i==8)
+{
+a=a+31;
+}
+if(i==9)
+{
+a=a+30;
+}
+if(i==10)
+{
+a=a+31;
+}
+if(i==11)
+{
+a=a+30;
+}
+if(i==12)
+{
+a=a+31;
+}
+}
+if(p.month==1)
+{
+b=31-p.date;
+
+}
+if(p.month==2)
+{
+b=28-p.date;
+}
+if(p.month==3)
+{
+b=31-p.date;
+
+}
+if(p.month==4)
+{
+b=30-p.date;
+}
+if(p.month==5)
+{
+b=31-p.date;
+}
+if(p.month==6)
+{
+b=30-p.date;
+}
+if(p.month==7)
+{
+b=31-p.date;
+}
+if(p.month==8)
+{
+b=31-p.date;
+}
+if(p.month==9)
+{
+b=30-p.date;
+}
+if(p.month==10)
+{
+b=31-p.date;
+}
+if(p.month==11)
+{
+b=30-p.date;
+}
+if(p.month==12)
+{
+b=31-p.date;
+}
+
+double result1;
+result1=a+b+curr_date+temp1;
+result1=result1*100;
+cleardevice();
+screen1();
+moveto(100,30);outtext("\t\tHOTAL PALASH INTERNATIONAL");
+
+moveto(280,70);outtext("BILL\n");
+moveto(280,90);outtext("----");
+moveto(50,120);outtext("To");
+moveto(80,150);outtext("Mis./Mr.");outtext(p.name);
+itoa(p.date,date1,10);
+itoa(p.month,month1,10);
+itoa(p.year,year1,10);
+moveto(50,180);outtext("\n entry date is:");moveto(400,180);outtext(date1);outtext("/");outtext(month1);outtext("/");outtext(year1);
+
+itoa(curr_date,date2,10);
+itoa(curr_month,month2,10);
+itoa(curr_year,year2,10);
+moveto(50,210);outtext("\n exit date is:");moveto(400,210);outtext(date2);outtext("/");outtext(month2);outtext("/");outtext(year2);
+moveto(50,270);outtext("Total cahrge is:-");gotoxy(50,19);cout<<result1;
+
+getch();
+}
+
+
+else
+{
+if(curr_date>p.date)
+{
+double  result1;
+result1=curr_date-p.date;
+result1=result1*100;
+cleardevice();
+screen1();
+moveto(100,30);outtext("\t\tHOTAL PALASH INTERNATIONAL");
+
+moveto(280,70);outtext("BILL\n");
+moveto(280,90);outtext("----");
+moveto(50,120);outtext("To");
+moveto(80,150);outtext("Mis./Mr.");outtext(p.name);
+itoa(p.date,date1,10);
+itoa(p.month,month1,10);
+itoa(p.year,year1,10);
+moveto(50,180);outtext("\n entry date is:");moveto(400,180);outtext(date1);outtext("/");outtext(month1);outtext("/");outtext(year1);
+
+itoa(curr_date,date2,10);
+itoa(curr_month,month2,10);
+itoa(curr_year,year2,10);
+moveto(50,210);outtext("\n exit date is:");moveto(400,210);outtext(date2);outtext("/");outtext(month2);outtext("/");outtext(year2);
+moveto(50,270);outtext("Total cahrge is:-");gotoxy(50,19);cout<<result1;
+
+getch();
+}
+else
+{
+result1=1;
+result1=result1*100;
+cleardevice();
+screen1();
+moveto(100,30);outtext("\t\tHOTAL PALASH INTERNATIONAL");
+
+moveto(280,70);outtext("BILL\n");
+moveto(280,90);outtext("----");
+moveto(50,120);outtext("To");
+moveto(80,150);outtext("Mis./Mr.");outtext(p.name);
+itoa(p.date,date1,10);
+itoa(p.month,month1,10);
+itoa(p.year,year1,10);
+moveto(50,180);outtext("\n entry date is:");moveto(400,180);outtext(date1);outtext("/");outtext(month1);outtext("/");outtext(year1);
+
+itoa(curr_date,date2,10);
+itoa(curr_month,month2,10);
+itoa(curr_year,year2,10);
+moveto(50,210);outtext("\n exit date is:");moveto(400,210);outtext(date2);outtext("/");outtext(month2);outtext("/");outtext(year2);
+moveto(50,270);outtext("Total cahrge is:-");gotoxy(50,19);cout<<result1;
+
+getch();
+}
+}
+}
+}
+
+}
+
+
+
+		    void hotel::screen1()
+		       {
+
+
+
+		     int i,j;
+
+		     for(i=0;i<700;i=i+7)
+		     {
+		     setcolor(11);
+		     moveto(0,i);outtext("*");
+		     moveto(625,i);outtext("*");
+		     }
+		     for(j=0;j<=650;j=j+7)
+		     {
+		     moveto(j,0);outtext("*");
+		     moveto(j,450);outtext("*");
+		     }
+		     }
+
+
+
+		hotel::c_day()
+{
+ int date,month,year,temp,vari,temp1,odddays,ordinary,leap,days;
+ temp=0;
+
+	struct dosdate_t d;
+_dos_getdate(&d);
+
+	    date=d.day;
+	    month=d.month;
+	    year=d.year;
+
+vari=year%400;
+if(vari>=100 &&vari<200)
+{
+vari=vari-100;
+temp=5;
+}
+if(vari>=200 && vari<300)
+{
+vari=vari-200;
+temp=3;
+}
+if(vari>=300 && vari<400)
+{
+vari=vari-300;
+temp=1;
+}
+vari=vari-1;
+leap=vari/4;
+ordinary=vari-leap;
+days=(leap*2)+ordinary;
+temp1=days%7;
+
+
+
+switch(month)
+{
+case 1:
+odddays=date;
+ break;
+
+case 2:
+
+odddays=date+31;
+    break;
+
+case 3:
+
+if(month==3)
+{
+if(year%4==0)
+{
+odddays=date+29+31;
+}
+else
+{
+odddays=date+28+31;
+}
+
+}
+break;
+
+
+case 4:
+
+
+if(month==4)
+{
+if(year%4==0)
+{
+odddays=date+31+29+31;
+}
+else
+{
+odddays=date+31+28+31;
+}
+
+}
+break;
+
+case 5:
+
+if(month==5)
+{
+if(year%4==0)
+{
+odddays=date+30+31+29+31;
+}
+else
+{
+odddays=date+30+31+28+31;
+}
+
+}
+break;
+
+
+
+case 6:
+
+
+if(month==6)
+{
+if(year%4==0)
+{
+odddays=date+31+30+31+29+31;
+}
+else
+{
+odddays=date+31+30+31+28+31;
+}
+
+}
+break;
+
+
+case 7:
+
+if(month==7)
+{
+if(year%4==0)
+{
+odddays=date+30+31+30+31+29+31;
+}
+else
+{
+odddays=date+30+31+30+31+28+31;
+}
+
+}
+break;
+
+case 8:
+
+if(month==8)
+{
+if(year%4==0)
+{
+odddays=date+31+30+31+30+31+29+31;
+}
+else
+{
+odddays=date+31+30+31+30+31+28+31;
+}
+
+}
+break;
+
+case 9:
+
+if(month==9)
+{
+if(year%4==0)
+{
+odddays=date+31+31+30+31+30+31+29+31;
+}
+else
+{
+odddays=date+31+31+30+31+30+31+28+31;
+}
+
+}
+break;
+
+
+case 10:
+
+if(month==10)
+{
+if(year%4==0)
+{
+odddays=date+30+31+31+30+31+30+31+29+31;
+}
+else
+{
+odddays=date+30+31+31+30+31+30+31+28+31;
+}
+
+}
+break;
+
+
+case 11:
+
+if(month==11)
+{
+if(year%4==0)
+{
+odddays=date+31+30+31+31+30+31+30+31+29+31;
+}
+else
+{
+odddays=date+31+30+31+31+30+31+30+31+28+31;
+}
+
+}
+break;
+
+
+case 12:
+
+if(month==12)
+{
+if(year%4==0)
+{
+odddays=date+30+31+30+31+31+30+31+30+31+29+31;
+}
+else
+{
+odddays=date+30+31+30+31+31+30+31+30+31+28+31;
+}
+
+}
+break;
+
+
+}
+
+
+odddays=odddays%7;
+
+odddays=odddays+temp+temp1;
+odddays=odddays%7;
+
+return(odddays);
+
+
+
+}
+
+
+void hotel::del_search_name()
+		 {
+
+		  cleardevice();
+		  char house[5],month1[5],year1[5],date1[5];
+		  char name1[20],cou[3];
+		  int choice=1,a,flag,counter=0;
+		  file.seekg(0);
+		  while(choice==1)
+		  {
+		  flag=0;
+		  counter=0;
+		  moveto(100,1);outtext("\t\tHOTAL PALASH INTERNATIONAL");
+		  screen();
+
+		  file.seekg(0);
+		  moveto(100,90);outtext("\n enter the name : ");
+		  gotoxy(54,7);gets(name1);
+
+		  while(file.read((char*)&p,sizeof(p)))
+		 {
+		    if(p.flag7=='*')
+		    {
+		  a=strcmp(name1,p.name);
+
+		  if(a==0)
+		  {
+		flag=1;
+		counter++;
+		}
+		}
+		}
+		file.clear();
+		if(counter>0)
+		{
+		 itoa(counter,cou,10);
+	       moveto(100,130);outtext("no. of person of same name is:- ");outtext(cou);
+
+	       moveto(100,150);outtext("\n Press enter to see the records");
+		getch();
+		}
+
+
+		 file.seekg(0L);
+		while(file.read((char*)&p,sizeof(p)))
+		 {
+	       a=strcmp(name1,p.name);
+
+		if(a==0)
+		{
+		  if(p.flag7=='*')
+		     {
+		cleardevice();
+		screen();
+
+	       moveto(50,100);outtext("\n name is:");moveto(300,100);outtext(p.name);
+
+	       moveto(50,150);outtext("\n address is:");gotoxy(38,11);cout<<p.house_no;cout<<",";moveto(320,145);outtext(p.colony);
+
+	       moveto(300,170);outtext(p.city);outtext("(");outtext(p.state);outtext(")");
+
+	       moveto(50,210);outtext("\n age is:");gotoxy(38,15);cout<<p.age;
+
+	       moveto(50,250);outtext("\n room no is:");gotoxy(38,17.5);cout<<p.room_no;
+
+		 itoa(p.date,date1,10);
+		  itoa(p.month,month1,10);
+		  itoa(p.year,year1,10);
+	      moveto(50,310);outtext("\n entry date is:");moveto(300,310);outtext(date1);outtext("/");outtext(month1);outtext("/");outtext(year1);
+	       moveto(50,350);outtext("\n day is :");moveto(300,350);outtext(p.day);
+
+		   getch();
+
+		  }
+		}
+
+		}
+		if(flag!=1)
+		{
+		moveto(100,160);outtext("not found\n");
+		 }
+		moveto(75,390);outtext("want to search more?(1/0).");
+		gotoxy(60,25.5);cin>>choice;
+		file.clear();
+	     cleardevice();
+		}
+		}
+
+
+		  void hotel::del_search_city()
+	     {
+		  cleardevice();
+		  char month1[5],year1[5],date1[5];
+		char city1[20],cou[3];
+		int choice=1,a,flag,counter;
+		file.seekg(0);
+		while(choice==1)
+		{
+		counter=0;
+		flag=0;
+		moveto(100,1);outtext("\t\tHOTAL PALASH INTERNATIONAL");
+		screen();
+
+		 file.seekg(0);
+		moveto(100,90);outtext("\n enter the city name : ");
+		gotoxy(54,7);gets(city1);
+
+		while(file.read((char*)&p,sizeof(p)))
+		 {
+		 if(p.flag7=='*')
+		     {
+		  a=strcmp(city1,p.city);
+
+		  if(a==0)
+		  {
+		flag=1;
+		counter++;
+		}
+		}
+		}
+		file.clear();
+		if(counter>0)
+		{
+		  itoa(counter,cou,10);
+	       moveto(100,130);outtext("no. of person of same city :- ");outtext(cou);
+
+	       moveto(100,150);outtext("\n Press enter to see the records");
+		getch();
+		}
+
+
+		 file.seekg(0L);
+		while(file.read((char*)&p,sizeof(p)))
+		 {
+	       a=strcmp(city1,p.city);
+
+		if(a==0)
+		{
+		if(p.flag7=='*')
+		     {
+		flag=1;
+		cleardevice();
+		screen();
+
+	       moveto(50,100);outtext("\n name is:");moveto(300,100);outtext(p.name);
+
+	       moveto(50,150);outtext("\n address is:");gotoxy(38,11);cout<<p.house_no;cout<<",";moveto(320,145);outtext(p.colony);
+
+	       moveto(300,170);outtext(p.city);outtext("(");outtext(p.state);outtext(")");
+
+	       moveto(50,210);outtext("\n age is:");gotoxy(38,15);cout<<p.age;
+
+	       moveto(50,250);outtext("\n room no is:");gotoxy(38,17.5);cout<<p.room_no;
+
+
+	itoa(p.date,date1,10);
+		  itoa(p.month,month1,10);
+		  itoa(p.year,year1,10);
+		 moveto(50,310);outtext("\n entry date is:");moveto(300,310);outtext(date1);outtext("/");outtext(month1);outtext("/");outtext(year1);
+
+	       moveto(50,350);outtext("\n day is :");moveto(300,350);outtext(p.day);
+
+	       getch();
+		}
+
+		}
+
+		}
+		if(flag!=1)
+		{
+		moveto(100,160);outtext("not found\n");
+		 }
+		moveto(75,390);outtext("want to search more?(1/0).");
+		gotoxy(60,25.5);cin>>choice;
+		file.clear();
+		cleardevice();
+		}
+	     }
+	    void hotel::del_search_date()
+	     {
+		 cleardevice();
+		 screen();
+		 moveto(100,1);outtext("\t\tHOTAL PALASH INTERNATIONAL");
+		 int d,m,y,counter;
+		 int choice=1,flag;
+		 char count[5],date1[5],month1[5],year1[5],cou[3];
+		 file.seekg(0);
+	     while(choice==1)
+	     {
+		 counter=0;
+		 flag=0;
+
+
+
+		 file.seekg(0);
+		 moveto(100,90);outtext("\n enter the date(dd) : ");
+		 gotoxy(54,7);cin>>d;
+		 moveto(100,120);outtext("\n enter the month(mm) : ");
+		 gotoxy(54,9);cin>>m;
+		 moveto(100,150);outtext("\n enter the year : ");
+		 gotoxy(54,11);cin>>y;
+	     while(file.read((char*)&p,sizeof(p)))
+	     {
+
+	     if(p.flag7=='*')
+		     {
+	     if(p.date==d&&p.month==m&&p.year==y)
+	     {
+		counter++;
+		flag=1;
+
+	     }
+	     }
+	     }
+	     if(counter>0)
+	     {
+	     itoa(counter,cou,10);
+	       moveto(50,170);outtext("no. of person of who came on same date:- ");outtext(cou);
+
+	       moveto(100,210);outtext("\n Press enter to see the records");
+		getch();
+	     }
+
+
+		file.clear();
+
+		file.seekg(0L);
+	     while(file.read((char*)&p,sizeof(p)))
+	     {
+	     if(p.flag7=='*')
+		     {
+		cleardevice();
+		screen();
+
+		 moveto(100,1);outtext("\t\tHOTAL PALASH INTERNATIONAL");
+	     if(p.date==d&&p.month==m&&p.year==y)
+	     {
+	       moveto(50,100);outtext("\n name is:");moveto(300,100);outtext(p.name);
+
+	       moveto(50,150);outtext("\n address is:");gotoxy(38,11);cout<<p.house_no;cout<<",";moveto(320,145);outtext(p.colony);
+
+	       moveto(300,170);outtext(p.city);outtext("(");outtext(p.state);outtext(")");
+
+	       moveto(50,210);outtext("\n age is:");gotoxy(38,15);cout<<p.age;
+
+	       moveto(50,250);outtext("\n room no is:");gotoxy(38,17.5);cout<<p.room_no;
+
+
+	       itoa(p.date,date1,10);
+	       itoa(p.month,month1,10);
+	       itoa(p.year,year1,10);
+	       moveto(50,310);outtext("\n entry date is:");moveto(300,310);outtext(date1);outtext("/");outtext(month1);outtext("/");outtext(year1);
+
+	       moveto(50,350);outtext("\n day is :");moveto(300,350);outtext(p.day);
+	       moveto(50,380);outtext("press any key to countinue..");
+		 getch();
+	       }
+	       }
+		}
+
+
+		if(flag!=1)
+		{
+		moveto(100,160);outtext("not found\n");
+		getch();
+		 }
+		moveto(75,400);outtext("want to search more?(1/0).");
+		gotoxy(60,25.5);cin>>choice;
+		getch();
+		file.clear();
+		cleardevice();
+		}
+
+	     }
+
+	    void hotel::del_search_state()
+	    {
+	    char date1[5],month1[5],year1[5],cou[3];
+		cleardevice();
+		char state1[20];
+		int choice=1,a,flag,counter;
+		file.seekg(0);
+		while(choice==1)
+		{
+		counter=0;
+		flag=0;
+		moveto(100,1);outtext("\t\tHOTAL PALASH INTERNATIONAL");
+		screen();
+
+		 file.seekg(0);
+		moveto(100,90);outtext("\n enter the state name : ");
+		gotoxy(54,7);gets(state1);
+
+		while(file.read((char*)&p,sizeof(p)))
+		 {
+		   if(p.flag7=='*')
+		     {
+		  a=strcmp(state1,p.state);
+
+		  if(a==0)
+		  {
+		flag=1;
+		counter++;
+		}
+		}
+		}
+		file.clear();
+		if(counter>0)
+		{
+		itoa(counter,cou,10);
+	       moveto(50,130);outtext("no. of person of same from same state:- ");outtext(cou);
+
+	       moveto(100,150);outtext("\n Press enter to see the records");
+		getch();
+		}
+
+
+		 file.seekg(0L);
+		while(file.read((char*)&p,sizeof(p)))
+		 {
+
+		if(a==0)
+		{
+
+		if(p.flag7=='*')
+		     {
+	       a=strcmp(state1,p.state);
+
+		flag=1;
+		cleardevice();
+		screen();
+
+	       moveto(50,100);outtext("\n name is:");moveto(300,100);outtext(p.name);
+
+	       moveto(50,150);outtext("\n address is:");gotoxy(38,11);cout<<p.house_no;cout<<",";moveto(320,145);outtext(p.colony);
+
+	       moveto(300,170);outtext(p.city);outtext("(");outtext(p.state);outtext(")");
+
+	       moveto(50,210);outtext("\n age is:");gotoxy(38,15);cout<<p.age;
+
+	       moveto(50,250);outtext("\n room no is:");gotoxy(38,17.5);cout<<p.room_no;
+
+
+		  itoa(p.date,date1,10);
+		  itoa(p.month,month1,10);
+		  itoa(p.year,year1,10);
+		 moveto(50,310);outtext("\n entry date is:");moveto(300,310);outtext(date1);outtext("/");outtext(month1);outtext("/");outtext(year1);
+
+	       moveto(50,350);outtext("\n day is :");moveto(300,350);outtext(p.day);
+			     getch();
+
+		}
+
+		}
+
+		}
+		if(flag!=1)
+		{
+		moveto(100,160);outtext("not found\n");
+		 }
+		moveto(75,390);outtext("want to search more?(1/0).");
+		gotoxy(60,25.5);cin>>choice;
+		file.clear();
+		cleardevice();
+		}
+	    }
+
+

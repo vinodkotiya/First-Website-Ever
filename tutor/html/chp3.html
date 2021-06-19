@@ -1,0 +1,281 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY
+ BGCOLOR="#0044ff"
+ TEXT="#000000"
+ LINK="#3333DD"
+ VLINK="#3333DD"
+ ALINK="#FF0000">
+<font color = yellow size = 6><center>Learn MS-Dos  </center></font>
+<CENTER>
+<TABLE CELLSPACING=0 CELLPADDING=60 BORDER=0 WIDTH=90% BGCOLOR="#FFFFFF">
+<TR>
+<TD>
+<b><font size="4" color="#00FFFF"><a href="chp2.html">&lt;&lt;--BACK</a></font></b>	<br><br>						
+
+
+
+
+<FONT FACE="georgia,verdana,arial,helvetica">
+
+                         <font size="4" color="#0000FF">  Command Types</font>
+
+
+</PRE>
+<PRE>MS-DOS shell provides 3 categories of commands :
+
+</PRE>
+<PRE>  #  Internal Commands
+
+</PRE>
+<PRE>  #  External Commands 
+
+</PRE>
+<PRE>  #  Batch Files or Command Files
+
+
+                        <font size="3" color="#0000FF"> Internal Commands</font></PRE>
+<PRE>&nbsp;</PRE>
+<PRE>The internal commands are directly executed from the RAM. These
+
+</PRE>
+<PRE>commands are part of the COMMAND.COM  file which is loaded into
+
+</PRE>
+<PRE>the RAM at the time of booting.
+
+</PRE>
+<PRE>For example, VER, DIR, REN, DEL, COPY etc.
+
+
+</PRE>
+<PRE>All these internal commands are discussed later in the CBT.
+
+
+</PRE>
+<PRE>                         <font color="#0000FF" size="4">External commands</font></PRE>
+<PRE>           
+
+</PRE>
+<PRE>The external commands are the names of the programs stored in the
+
+</PRE>
+<PRE>disk files. Before these programs can be  executed  they  must be
+
+</PRE>
+<PRE>loaded from the disk into the RAM.
+
+</PRE>
+<PRE>For example, CHKDSK, FORMAT, BACKUP etc.
+
+
+</PRE>
+<PRE>All these external commands are also discussed later in the CBT.
+</PRE>
+<PRE>                  <font color="#0000FF" size="3"> Batch commands</font></PRE>
+<PRE>&nbsp;</PRE>
+<PRE>Batch  files  are  text  files that contain a list of internal,
+
+</PRE>
+<PRE>external or batch commands which are executed in  sequence when
+
+</PRE>
+<PRE>when the batch file is  executed ( by typing in the name of the
+
+</PRE>
+<PRE>file). AUTOEXEC.BAT is  a  batch  file  which  gets  executed 
+
+</PRE>
+<PRE>automatically  on  booting. This file contains certain start-up 
+
+</PRE>
+<PRE>instructions. All the batch files will have an extension .BAT.
+</PRE>
+<PRE>                    <font color="#0000FF" size="4">   Editing Controls</font></PRE>
+<PRE>
+</PRE>
+<PRE>Several keys on the keyboard perform special tasks. The location of
+
+</PRE>
+<PRE>these keys  differs, depending  on whether you are using a keyboard
+
+</PRE>
+<PRE>that is compatible with the IBM PC/XT  or  the  PC/AT. The usage of 
+
+</PRE>
+<PRE>these keys differ across software packages.
+
+</PRE>
+<PRE>MS-DOS uses some of these special keys for  editing the commands at 
+
+</PRE>
+<PRE>the DOS prompt (A&gt;, C&gt;).
+
+</PRE>
+<PRE> ______________________________________________________________________</PRE>
+<PRE>   <font color="#0000FF">KEY NAME</font>     <font color="#0000FF">FUNCTION </font>                                       </PRE>
+<PRE> ______________________________________________________________________</PRE>
+<PRE>    <font color="#FF0000">F1</font>        Retypes one character at a time from the last      </PRE>
+<PRE>              command entry from the current cursor position.    </PRE>
+<PRE>    <font color="#FF0000">F2 </font>       Retypes all characters from the last command entry </PRE>
+<PRE>              up to the one identical to your next keystroke.    </PRE>
+<PRE>    <font color="#FF0000">F3  </font>      Retypes all remaining characters from the last     </PRE>
+<PRE>              command entry.                                     </PRE>
+<PRE>    <font color="#FF0000">F4 </font>       Stores all characters beginning at the first match </PRE>
+<PRE>              with your next keystroke and ending with the last  </PRE>
+<PRE>              command entry.                                    </PRE>
+<PRE>    <font color="#FF0000">BkSpace</font>   Erases character to the left of the cursor.        </PRE>
+<PRE>    <font color="#FF0000">F6 </font>       Places a special end-of-file code at the end of  </PRE>
+<PRE>              the currently open file; sometimes referred to as</PRE>
+<PRE>              a CTRL-Z or ^Z end-of-file code.  </PRE>
+<PRE><font color="#FF0000">    F7 </font>       Show comands history .</PRE>
+<PRE>    <font color="#FF0000">Ins </font>      Permits insertion of characters at the cursor.   </PRE>
+<PRE>    <font color="#FF0000">Del</font>       Permits deletion of the character to the left of </PRE>
+<PRE>              the cursor.                                      </PRE>
+<PRE>    <font color="#FF0000">Esc  </font>     Abandons the currently constructed command and   </PRE>
+<PRE>              the next prompt appears.</PRE>
+<PRE>when DOSKEY command Enabled.</PRE>
+<PRE>    upArrow   Display previous commands one by one</PRE>
+<PRE>    downArrow reverse of uparrow</PRE>
+<PRE>                          </PRE>
+<PRE>  ______________________________________________________________________
+</PRE>
+<PRE>     If the user has keyed in TOPE_ instead of TYPE
+
+</PRE>
+<PRE>     the user can Press [BkSpace] &lt;- three times
+
+</PRE>
+<PRE>     the command will appear as T_
+
+</PRE>
+<PRE>     and user can retype YPE
+
+</PRE>
+<PRE>     The command will now appear as TYPE_
+
+
+</PRE>
+<PRE>If the  user has used a DIR as his previous  command and wants to
+
+</PRE>
+<PRE>repeat  the DIR command, then the user simply  presses the F3 key
+
+</PRE>
+<PRE>for MS-DOS to automatically retype the DIR_ at the prompt.
+
+</PRE>
+<PRE>If the  user  has keyed in COPY MYFILE.DAT A:  and wants to repeat
+
+</PRE>
+<PRE>the COPY command, the user can press the F1 key 5 times for MS-DOS
+
+</PRE>
+<PRE>to retype COPY _ at the prompt  and then specify another file name
+
+</PRE>
+<PRE>and press ENTER key.</PRE>
+<PRE>                         <font size="4" color="#0000FF">Redirection</font></PRE>
+<PRE>      
+</PRE>
+<PRE>Redirection refers to the  ability of a program or a MS-DOS command
+
+</PRE>
+<PRE>to  choose an alternative device for input or output. Most programs
+
+</PRE>
+<PRE>and commands have a default device. For example, when you enter the
+
+</PRE>
+<PRE>DIR command, the computer assumes that the directory listing should
+
+</PRE>
+<PRE>be  displayed on  the screen. This is because  the  default  output
+
+</PRE>
+<PRE>device is the console (CON).
+
+</PRE>
+<PRE>The redirection symbols used by MS-DOS are &gt;, &lt;, &gt;&gt;.</PRE>
+<PRE>                       
+</PRE>
+<PRE>The default output device can be overridden by using the redirect-
+
+</PRE>
+<PRE>ion  symbol. The output redirection symbol  (&gt;) can be used to re-
+
+</PRE>
+<PRE>direct the output either to a printer or to a disk file.
+
+</PRE>
+<PRE>DIR &gt; PRN  will  result  in  sending the directory listing to  the
+
+</PRE>
+<PRE>printer instead of the default output device ie. the console.
+
+</PRE>
+<PRE>DIR &gt; C:\DIR.vin  will  similarly  result in storing the directory
+
+</PRE>
+<PRE>listing in the file.</PRE>
+<PRE>
+</PRE>
+<PRE>The redirection symbol for appending to a file is the &gt;&gt; symbol.
+
+</PRE>
+<PRE>DIR A: &gt;&gt; DIR.vin will append the output to the existing DIR.vin
+
+</PRE>
+<PRE>file.</PRE>
+<PRE>type this command    <b>c:\tree /f /a &gt; files.txt </b></PRE>
+<PRE>this will give a tree structure of all files and folder inside c:\ drive in to </PRE>
+<PRE>a ascii (/a) file files.txt
+</PRE>
+<PRE>MS-DOS can receive input from text file instead of accepting data
+
+</PRE>
+<PRE>from keyboard. To indicate that inputs are coming from a file and
+
+</PRE>
+<PRE>not from the keyboard the input  redirection  symbol (&lt;) is used.
+
+
+</PRE>
+<PRE>                        <font size="3" color="#0000FF"> Pipe Character</font>
+</PRE>
+<PRE>Piping allows you  to redirect the output  of one command or program
+
+</PRE>
+<PRE>as input to another command or program. Several interlinked commands
+
+</PRE>
+<PRE>can thus  be  combined to form a single  complex command.  The  Pipe
+
+</PRE>
+<PRE>symbol  can  be  generated pressing  the vertical bar symbol  |. A
+
+</PRE>
+<PRE>series of commands or programs that are inter-dependent and generate
+
+</PRE>
+<PRE>intermediate output for one  another can  be  combined into a single
+
+</PRE>
+<PRE>command  by using a combination  of redirection and pipe characters.</PRE>
+<PRE>
+<b><font size="4" color="#00FFFF"><a href="chp3.html">&lt;&lt;--BACK</a></font></b>							
+
+<a href="index.html"><font size="4">INDEX</font></a>
+
+</FONT>
+</TD>
+</TR>
+</TABLE>
+</CENTER>
+
+</TABLE>
+
+</BODY>
+</HTML>

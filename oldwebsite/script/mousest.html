@@ -1,0 +1,69 @@
+<!---DocType HTML VINOD KOTIYA s-2 Shrimaya Apartment Sector-B/363 Sarvdharm Colony Bhopal-42.Fone +91-0755-2794428 --->
+<HTML>
+      <HEAD><TITLE> VIN Script Generator </TITLE>
+
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// --->
+<!---                 COPY THE SCRIPT FROM HERE AND APPLY ON YOUR PAGE INSIDE  HEAD --->
+<!--- Contact me for more scripts,source code,viruses,softwares at vinodkotiya24@rediffmail.com --> 
+ <!--Star effect for the mouse cursor. --->
+<script language="JavaScript">
+<!--  Mouse Stars by kurt.grigg@virgin.net
+
+//To add more stars simply add more colours in below array!!
+colours=new Array('ff0000','00ff00','3366ff','ff00ff','ffa500','ffffff','fff000')
+
+//Alter nothing below!!
+amount=colours.length;
+ns=(document.layers)?1:0,step=0.2,currStep=0,my=0,mx=0;
+if (ns){
+for (i=0; i < amount; i++)
+document.write('<LAYER NAME="nsstars'+i+'" BGCOLOR='+colours[i]+' CLIP="0,0,2,2"></LAYER>');
+}
+else{
+document.write('<div id="ie" style="position:absolute;top:0;left:0;"><div style="position:relative">');
+for (i=0; i < amount; i++)
+document.write('<span id="iestars" style="position:absolute;top:0;left:0;width:2px;height:2px;background:'+colours[i]+';font-size:2px"></span>');
+document.write('</div></div>');
+}
+(document.layers)?window.captureEvents(Event.MOUSEMOVE):0;
+function Mouse(evnt){
+ my = (document.layers)?evnt.pageY:event.y;
+ mx = (document.layers)?evnt.pageX:event.x;
+}
+(document.layers)?window.onMouseMove=Mouse:document.onmousemove=Mouse;
+function stars(){
+if (!ns)ie.style.top=document.body.scrollTop;
+for (i=0; i < amount; i++)
+ {
+ var layer=(document.layers)?document.layers["nsstars"+i]:iestars[i].style; 
+ layer.top= my+Math.cos((20*Math.sin(currStep/20))+i*70)*100*(Math.sin(10+currStep/10)+0.2)*Math.cos((currStep + i*25)/10); 
+ layer.left=mx+Math.sin((20*Math.sin(currStep/20))+i*70)*180*(Math.sin(10+currStep/10)+0.2)*Math.cos((currStep + i*25)/10);
+ }
+currStep+=step;
+setTimeout('stars()',10);
+}
+window.onload=stars;
+//-->
+</script>
+
+</HEAD> 
+
+
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// --->
+<!---                 COPY THE SCRIPT UP TO BEFORE /HEAD AND APPLY ON YOUR PAGE --->
+
+     <BODY bgcolor = #0000ff text = #ffff00>   
+
+
+    <H4>Mouse Star<H4>
+<h6>Third party scripts</h6>
+<center><h3>1 : To get the script click on view---->> Source </h3></center>
+<center><h3>The html coding will appear  </h3></center>
+<center><h3>Copy the script Source placed between HEAD tag and paste on your page </h3></center>
+<center><h3>2 :  Or save this page on your harddisk by File->> SaveAs  </h3></center>
+
+
+<font color = red size = 4> To get  more scripts,source code,viruses,softwares contact at vinodkotiya24@rediffmail.com </font>
+
+<hr><font color = white > <center><a href ="..\index.html"> HOME  </a>| <a href ="..\source.html"> BACK </a> | <a href ="..\stand.html"> STAND ALONES </a>| <a href ="..\aboutme.html"> About </a> </center></font><hr> </BODY> 
+ </HTML>

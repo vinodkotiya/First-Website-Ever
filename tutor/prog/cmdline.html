@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <title>cmdline</title>
+</head>
+<body>
+//write file using command line arguments<br>
+#include&lt;fstream.h&gt;<br>
+#include&lt;iostream.h&gt;<br>
+#include &lt;string.h&gt;<br>
+#include&lt;stdio.h&gt;<br>
+#include&lt;conio.h&gt;<br>
+void main(int argc,char *argv[])<br>
+{<br>
+ &nbsp; char arr[200],ch;<br>
+ &nbsp; fstream in(argv[1],ios::in|ios::out);<br>
+ &nbsp; ofstream out;<br>
+ &nbsp; out.open(argv[2]);<br>
+ &nbsp;&nbsp; cout&lt;&lt;"\n Enter the text :- ";<br>
+ &nbsp;&nbsp; gets(arr);<br>
+ &nbsp;&nbsp; in&lt;&lt;arr;<br>
+ &nbsp;&nbsp; &nbsp; &nbsp; in.seekg(0);<br>
+ &nbsp;&nbsp; while(!in.eof())<br>
+ &nbsp;&nbsp; {<br>
+ &nbsp;&nbsp; &nbsp; in.get(ch);<br>
+ &nbsp;&nbsp; &nbsp; out.put(ch);<br>
+ &nbsp;&nbsp; &nbsp; cout&lt;&lt;ch;<br>
+ &nbsp; &nbsp; }<br>
+ getch();<br>
+}<br>
+<br>
+</body>
+</html>

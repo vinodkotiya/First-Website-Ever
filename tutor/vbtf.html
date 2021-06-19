@@ -1,0 +1,81 @@
+<!--By VINOD KOTIYA S-2 SHRIMAYA APARTMENT SECTOR-B/363 SARVDHARM COLONY BHOPAL FONE : 2794428----><HTML><HEAD> <TITLE> converted from HOW2MAKE trancparent forms in vb by vinod kotiya.txt by vinod kotiya's All2Html converter </TITLE> </HEAD><BODY BGCOLOR = "#000"TEXT = "#0FF0">             <CENTER>
+            <TABLE align=left cellPadding=0 cellSpacing=0 
+            style="BORDER-BOTTOM: #6c7ceb 4px solid; BORDER-LEFT: black 4px solid; BORDER-RIGHT: black 4px solid; BORDER-TOP: #6c7ceb 4px solid" width="572">
+              <TBODY>
+              <TR>
+                <TD align=middle bgColor=#220044 width=564><B><FONT 
+                  color=#6c7ceb face="arial" style="FONT-SIZE: 22px">
+                  <CENTER>                  <p>.:: VINSOFT 
+            ::.</p>                </CENTER></FONT></B></TD></TR></TBODY></TABLE>
+            </CENTER>
+            <CENTER>
+            <CENTER>
+            <B>
+            <FONT 
+            face=arial style="FONT-SIZE: 13px" color="#6c7ceb">
+            <CENTER>
+            <p> 
+            &nbsp;</p>
+            </CENTER></CENTER></CENTER></FONT></B>&nbsp;<table border="1" cellpadding="3" style="border-collapse: collapse" width="63%" id="AutoNumber1" bordercolorlight="#808080" bordercolordark="#800080" height="67">
+              <tr>
+            <B>
+            <FONT 
+            face=arial style="FONT-SIZE: 13px" color="#6c7ceb">
+                <td width="33%" align="center" height="16">
+            <B>
+    <FONT face="arial" 
+      style="FONT-SIZE: 13px; font-weight:700" color="#00BFFF">
+                <u>            <a href="../games.html" style="color: #cc33cc; text-decoration: none"><font color="#00BFFF"><u>Games</u></font></a></u></FONT></B></td>
+                <td width="33%" align="center" height="16">
+            <FONT 
+            face=arial style="FONT-SIZE: 13px; font-weight:700" color="#6c7ceb">
+            <a href="../stand.html" style="color: #cc33cc; text-decoration: none">
+    <FONT face="arial" 
+      style="FONT-SIZE: 13px" color="#00BFFF"><u>My
+                Projects</u></FONT><u><FONT color=#00bfff face="arial" 
+      style="FONT-SIZE: 13px"> </FONT> </u> </a></FONT></td>
+                <td width="34%" align="center" height="16">
+            <B>
+                <FONT color=#00bfff face="arial" 
+      style="FONT-SIZE: 13px">&nbsp;<u><a href="../gate.html" style="color: #cc33cc; text-decoration: none"><font color="#00BFFF"><u>GATE
+            </u>
+            </font></a></u> </FONT></B></td>
+                </FONT></B>
+              </tr>
+              <tr>
+            <B>
+            <FONT 
+            face=arial style="FONT-SIZE: 13px" color="#6c7ceb">
+                  <td width="33%" align="center" height="15">
+                  <font color="#00BFFF" face="arial" style="font-size: 13px; font-weight: 700">
+                  <a href="../fun.html" style="color: #cc33cc; text-decoration: none"><u><font color="#00BFFF">FUN </font> </u>
+                  </a></font></td>
+                  <td width="33%" align="center" height="15">
+            <FONT color=#FFFF00 face=verdana 
+                  size=2><B><font color="#FFFF00">            <a href="../index.html" style="color: #cc33cc; text-decoration: none"><u><font color="#FFFF00">
+            Home</font></u></a></font></B></FONT></td>
+                  <td width="34%" align="center" height="15">
+            <B>
+                  <FONT color=#00bfff face="arial" 
+      style="FONT-SIZE: 13px; font-weight:700"><u>
+            <a href="../source.html" style="color: #cc33cc; text-decoration: none">
+            <font color="#00BFFF"><u>Source Code</u></font></a></u></FONT></B></td>
+                  </FONT></B>
+              </tr>
+              <tr>
+            <B>
+            <FONT 
+            face=arial style="FONT-SIZE: 13px" color="#6c7ceb">
+                  <td width="33%" height="16">
+                  <p align="center"><u><font color="#00BFFF">
+                  <span style="font-weight: 700; font-size: 13px">Virus</span></font></u></td>
+                  <td width="33%" height="16">
+                  <p align="center">
+            <B>
+                  <font color="#00BFFF" face="arial" style="font-size: 13px">
+            <a href="../tutors.html" style="color: #cc33cc; text-decoration: none"><u><font color="#00BFFF">Tutorials</font></u></a></font></B></td>
+                  <td width="34%" height="16"></td>
+                  </FONT></B>
+              </tr>
+              </table>
+            <p>&nbsp;</p><p>HOW2MAKE trancparent forms in vb<br>HOW2MAKE trancparent controls in vb  '<br><br><br><br>here is the declaration of the function used for trancepareny<br><br>/////////////////////////////////////////////////////////////////////////////<br>Private Declare Function GetWindowLong Lib "user32" Alias "GetWindowLongA" (ByVal hwnd As Long, ByVal nIndex As Long) As Long<br><br>Private Declare Function SetWindowLong Lib "user32" Alias "SetWindowLongA" (ByVal hwnd As Long, ByVal nIndex As Long, ByVal dwNewLong As Long) As Long<br><br>Private Declare Function SetLayeredWindowAttributes Lib "user32" (ByVal hwnd As Long, ByVal Crey As Byte, ByVal bAlpha As Byte, ByVal dwFlags As Long) As Long<br><br>Private Const GWL_EXSTYLE = -20<br>Private Const WS_EX_LAYERED = &H80000<br>Private Const LWA_ALPHA = &H3&<br>******** use  'H3 for control tranceparent else H2 for window tranceparent<br>Dim LWA_ALPHA As Long<br>Dim VIN As Byte<br>/////////////////////////////////////////////////////////////////////////////<br>the variable VIN decides the degree of opacity<br>i.e. for semitranceparency VIN = 128<br> for opacity VIN = 255<br>for invisible VIN = 0<br>and then passed to function by calling it like this<br><br>Call SetWindowLong(Me.hwnd, GWL_EXSTYLE, WS_EX_LAYERED)<br>Call GetWindowLong(Me.hwnd, GWL_EXSTYLE)<br>Call SetLayeredWindowAttributes(Me.hwnd, 0, VIN, LWA_ALPHA)<br><br><br>VINOD KOTIYA<br>B.E. 3rd year<br>information technology<br>UIT Rajeev Gandhi Prodyogiki Vishwavidyalaya , Bhopal<br>get full sourcecode of other free softwares , games and virus at:<br>http:\\vinodkotiya.tripod.com<br>or contact offline:<br>s-2 shrimaya appt sector-b/363 <br>sarvdharm colony bhopal - 42<br>fone +91-0755-2794428<br>email vinodkotiya24@rediffmail.com<br><br></p><h4></h4></body></html><hr><h6><marquee>Created by vinod kotiya's ALL2HTML converter</marquee></h6>

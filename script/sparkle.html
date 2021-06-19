@@ -1,0 +1,144 @@
+<!---DocType HTML VINOD KOTIYA s-2 Shrimaya Apartment Sector-B/363 Sarvdharm Colony Bhopal-42.Fone +91-0755-2794428 --->
+<HTML>
+      <HEAD><TITLE> VIN Script Generator </TITLE>
+
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// --->
+<!---                 COPY THE SCRIPT FROM HERE AND APPLY ON YOUR PAGE INSIDE  HEAD --->
+<!--- Contact me for more scripts,source code,viruses,softwares at vinodkotiya24@rediffmail.com --> 
+ <!--A sparkling trailer for your mouse cursor. --->
+<STYLE TYPE="text/css">
+<!--
+BODY{
+overflow:scroll;
+overflow-x:hidden;
+}
+.s1
+{
+  position  : absolute;
+  font-size : 10pt;
+  color     : blue;
+  visibility: hidden;
+}
+.s2
+{
+  position  : absolute;
+  font-size : 18pt;
+  color     : red;
+	visibility : hidden;
+}
+.s3
+{
+  position  : absolute;
+  font-size : 14pt;
+  color     : gold;
+	visibility : hidden;
+}
+.s4
+{
+  position  : absolute;
+  font-size : 12pt;
+  color     : lime;
+	visibility : hidden;
+}
+
+//-->
+</STYLE>
+<DIV ID="div1" CLASS="s1">*</DIV>
+<DIV ID="div2" CLASS="s2">*</DIV>
+<DIV ID="div3" CLASS="s3">*</DIV>
+<DIV ID="div4" CLASS="s4">*</DIV>
+
+<p align="center"><font face="arial" size="-2">This free script provided by</font><br>
+<font face="arial, helvetica" size="-2"><a href="http://wsabstract.com">Website
+Abstraction</a></font></p>
+
+<SCRIPT LANGUAGE="javascript" TYPE="text/javascript">
+
+/*
+Submitted by Mike McGrath  http://website.lineone.net/~mike_mcgrath
+Featured on Website Abstraction (http://wsabstract.com)
+For this and over 400+ free scripts, visit http://wsabstract.com
+*/
+
+var nav = (document.layers);
+var tmr = null;
+var spd = 50;
+var x = 0;
+var x_offset = 5;
+var y = 0;
+var y_offset = 15;
+
+if(nav) document.captureEvents(Event.MOUSEMOVE);
+document.onmousemove = get_mouse; 
+
+function get_mouse(e)
+{    
+  x = (nav) ? e.pageX : event.clientX+document.body.scrollLeft;
+  y = (nav) ? e.pageY : event.clientY+document.body.scrollTop;
+  x += x_offset;
+  y += y_offset;
+  beam(1);     
+}
+
+function beam(n)
+{
+  if(n<5)
+  {
+    if(nav)
+    { 
+      eval("document.div"+n+".top="+y);
+      eval("document.div"+n+".left="+x);
+      eval("document.div"+n+".visibility='visible'");
+    }  
+    else
+    {
+      eval("div"+n+".style.top="+y);
+      eval("div"+n+".style.left="+x);
+      eval("div"+n+".style.visibility='visible'");
+    }
+    n++;
+    tmr=setTimeout("beam("+n+")",spd);
+  }
+  else
+  {
+     clearTimeout(tmr);
+     fade(4);
+  }   
+} 
+
+function fade(n)
+{
+  if(n>0) 
+  {
+    if(nav)eval("document.div"+n+".visibility='hidden'");
+    else eval("div"+n+".style.visibility='hidden'"); 
+    n--;
+    tmr=setTimeout("fade("+n+")",spd);
+  }
+  else clearTimeout(tmr);
+} 
+
+// -->
+</SCRIPT>
+
+</HEAD> 
+
+
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// --->
+<!---                 COPY THE SCRIPT UP TO BEFORE /HEAD AND APPLY ON YOUR PAGE --->
+
+     <BODY bgcolor = #ooooff text = #ffff00>   
+
+
+    <H4>Sparkle Trail<H4>
+<h6>Third party scripts</h6>
+<center><h3>1 : To get the script click on view---->> Source </h3></center>
+<center><h3>The html coding will appear  </h3></center>
+<center><h3>Copy the script Source placed between HEAD tag and paste on your page </h3></center>
+<center><h3>2 :  Or save this page on your harddisk by File->> SaveAs  </h3></center>
+
+
+<font color = red size = 4> To get  more scripts,source code,viruses,softwares contact at vinodkotiya24@rediffmail.com </font>
+
+<hr><font color = white > <center><a href ="..\index.html"> HOME  </a>| <a href ="..\source.html"> BACK </a> | <a href ="..\stand.html"> STAND ALONES </a>| <a href ="..\aboutme.html"> About </a> </center></font><hr> </BODY> 
+ </HTML>

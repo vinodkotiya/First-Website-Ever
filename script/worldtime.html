@@ -1,0 +1,578 @@
+<!---DocType HTML VINOD KOTIYA s-2 Shrimaya Apartment Sector-B/363 Sarvdharm Colony Bhopal-42.Fone +91-0755-2794428 --->
+<HTML>
+      <HEAD><TITLE> VIN Script Generator </TITLE>
+
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// --->
+<!---                 COPY THE SCRIPT FROM HERE AND APPLY ON YOUR PAGE INSIDE  HEAD --->
+<!--- Contact me for more scripts,source code,viruses,softwares at vinodkotiya24@rediffmail.com --> 
+ <!--Display time of the cities in the world.--->
+<!--WORLD-TIMES-->
+
+<!-- This goes in the HEAD of the html file -->
+
+<script language="javascript">
+<!-- Copyright 2001, Sandeep Gangadharan (sivam@bol.net.in) -->
+<!-- For more free scripts go to http://web1.mtnl.net.in/~sivam/ -->
+
+<!--
+function timezone() {
+
+<!--Calendar-->
+var 
+month= new Array();
+month[0]="January";	
+month[1]="February";
+month[2]="March";
+month[3]="April";
+month[4]="May";
+month[5]="June";
+month[6]="July";
+month[7]="August";
+month[8]="September";
+month[9]="October";
+month[10]="November";
+month[11]="December";
+
+today = new Date();
+date = today.getDate();
+month = (month[today.getMonth()]);
+gmt = today.toGMTString();
+exp = gmt;
+
+if (navigator.appName == 'Netscape') {
+exp1 = exp.substring(17,19);
+exp2 = exp.substring(20,22);
+exp3 = exp.substring(18,19);
+exp4 = exp.substring(23,25); 
+
+tim = parseInt(exp1)==0 ? parseInt(exp3) : parseInt(exp1);
+time = ((tim>12) ? tim-12 : tim);
+}
+
+if (navigator.appName == 'Microsoft Internet Explorer' && (exp.substring(5,6))>0) {
+
+exp1 = exp.substring(17,19);
+exp2 = exp.substring(20,22);
+exp3 = exp.substring(18,19);
+exp4 = exp.substring(23,25);
+
+tim = parseInt(exp1)==0 ? parseInt(exp3) : parseInt(exp1);
+time = ((tim>12) ? tim-12 : tim);
+}
+
+if (navigator.appName == 'Microsoft Internet Explorer' && (exp.substring(5,7))<10) {
+exp1 = exp.substring(16,18);
+exp2 = exp.substring(19,21);
+exp3 = exp.substring(17,18);
+exp4 = exp.substring(22,24);
+
+tim = parseInt(exp1)==0 ? parseInt(exp3) : parseInt(exp1);
+time = ((tim>12) ? tim-12 : tim);
+}
+
+time1 = exp2;
+
+time2 = exp4;
+((time2<10) ? "0" : "");
+
+<!--AFRICA-->
+time0af = time; add0af = ((tim)<12 || (tim)>23 ? " AM" : " PM");
+time1af = time + 1; add1af = ((tim+1)<12 || (tim+1)>23 ? " AM" : " PM");
+time2af = time + 2; add2af = ((tim+2)<12 || (tim+2)>23 ? " AM" : " PM");
+time3af = time + 3; add3af = ((tim+3)<12 || (tim+3)>23 ? " AM" : " PM");
+afra0af = ((time0af>12) ? time0af-12 : time0af);
+afra1af = ((time1af>12) ? time1af-12 : time1af);
+afra2af = ((time2af>12) ? time2af-12 : time2af);
+afra3af = ((time3af>12) ? time3af-12 : time3af);
+
+<!--AMERICA-->
+time3am = time - 3; add3am = ((tim-3)<0 || (tim-3)>11 ? " PM" : " AM");
+time4am = time - 4; add4am = ((tim-4)<0 || (tim-4)>11 ? " PM" : " AM");
+time5am = time - 5; add5am = ((tim-4)<0 || (tim-4)>11 ? " PM" : " AM");
+time6am = time - 6; add6am = ((tim-4)<0 || (tim-4)>11 ? " PM" : " AM");
+time10am = time - 10; add10am = ((tim-10)<0 || (tim-10)>11 ? " PM" : " AM");
+timeLV = time - 7; dstam = "+";
+timeMNTH = time - 4; dstam = "+";
+amer3am = ((time3am<0) ? time3am+12 : time3am); ((amer3am==0) ? amer3am=12 : amer3am);
+amer4am = ((time4am<0) ? time4am+12 : time4am); ((amer4am==0) ? amer4am=12 : amer4am);
+amer5am = ((time5am<0) ? time5am+12 : time5am); ((amer5am==0) ? amer5am=12 : amer5am);
+amer6am = ((time6am<0) ? time6am+12 : time6am); ((amer6am==0) ? amer6am=12 : amer6am);
+amer10am = ((time10am<0) ? time10am+12 : time10am); ((amer10am==0) ? amer10am=12 : amer10am);
+amerLV = ((timeLV<0) ? timeLV+12 : timeLV); ((amerLV==0) ? amerLV=12 : amerLV);
+amerMNTH = ((timeMNTH<0) ? timeMNTH+12 : timeMNTH); ((amerMNTH==0) ? amerMNTH=12 : amerMNTH);
+
+<!--ASIA-->
+time2as = time + 2; add2as = ((tim+2)<12 || (tim+2)>23 ? " AM" : " PM");
+time3as = time + 3; add3as = ((tim+3)<12 || (tim+3)>23 ? " AM" : " PM");
+time4as = time + 4; add4as = ((tim+4)<12 || (tim+4)>23 ? " AM" : " PM");
+time5as = time + 5; add5as = ((tim+5)<12 || (tim+5)>23 ? " AM" : " PM");
+time6as = time + 6; add6as = ((tim+6)<12 || (tim+6)>23 ? " AM" : " PM");
+time7as = time + 7; add7as = ((tim+7)<12 || (tim+7)>23 ? " AM" : " PM");
+time8as = time + 8; add8as = ((tim+8)<12 || (tim+8)>23 ? " AM" : " PM");
+time9as = time + 9; add9as = ((tim+9)<12 || (tim+9)>23 ? " AM" : " PM");
+time5MC = time + 5; add5MC = ((tim+5)<12 || (tim+5)>23 ? " AM" : " PM");
+asia2as = ((time2as>12) ? time2as-12 : time2as);
+asia3as = ((time3as>12) ? time3as-12 : time3as);
+asia4as = ((time4as>12) ? time4as-12 : time4as);
+asia5as = ((time5as>12) ? time5as-12 : time5as);
+asia6as = ((time6as>12) ? time6as-12 : time6as);
+asia7as = ((time7as>12) ? time7as-12 : time7as);
+asia8as = ((time8as>12) ? time8as-12 : time8as);
+asia9as = ((time9as>12) ? time9as-12 : time9as);
+asia5MC = ((time5MC>12) ? time5MC-12 : time5MC);
+
+<!--AUSTRALIA-->
+timeADE = time + 9; dstau = "+";
+timeBRI = time + 10; addBRI = ((tim+10)<12 || (tim+10)>23 ? " AM" : " PM");
+timeMEL = time + 11; dstau = "+";
+timePER = time + 8; addPER = ((tim+8)<12 || (tim+8)>23 ? " AM" : " PM");
+timeSYD = time + 11; dstau = "+";
+timeDER = time + 9; dstau = "+";
+timeTOW = time + 10; addTOW = ((tim+10)<12 || (tim+10)>23 ? " AM" : " PM");
+timeWEL = time + 1; dstnz = "+";
+austADE = ((timeADE>12) ? timeADE-12 : timeADE);
+austBRI = ((timeBRI>12) ? timeBRI-12 : timeBRI);
+austMEL = ((timeMEL>12) ? timeMEL-12 : timeMEL);
+austPER = ((timePER>12) ? timePER-12 : timePER);
+austSYD = ((timeSYD>12) ? timeSYD-12 : timeSYD);
+austDER = ((timeDER>12) ? timeDER-12 : timeDER);
+austTOW = ((timeTOW>12) ? timeTOW-12 : timeTOW);
+austWEL = ((timeWEL>12) ? timeWEL-12 : timeWEL);
+
+<!--EUROPE-->
+time1eu = time + 1; dsteu = "+";
+time2eu = time + 2; dsteu = "+";
+time3eu = time + 3; dsteu = "+";
+time4eu = time + 4; dsteu = "+";
+time5eu = time + 5; dsteu = "+";
+timeMOS = time + 4; dstru = "+";
+timeREY = time + 0; addREY = ((tim+0)<12 || (tim+0)>23 ? " AM" : " PM");
+euro1eu = ((time1eu>12) ? time1eu-12 : time1eu);
+euro2eu = ((time2eu>12) ? time2eu-12 : time2eu);
+euro3eu = ((time3eu>12) ? time3eu-12 : time3eu);
+euro4eu = ((time4eu>12) ? time4eu-12 : time4eu);
+euro5eu = ((time5eu>12) ? time5eu-12 : time5eu);
+euroMOS = ((timeMOS>12) ? timeMOS-12 : timeMOS);
+euroREY = ((timeREY>12) ? timeREY-12 : timeREY);
+
+<!--Adjustment for Mumbai & Colombo Time-->
+timeO= (parseInt(time1)<30 ?  parseInt(time1)+30 : parseInt(time1)-30);
+if ((time1)>29) {asia5MC=asia5MC+1;}
+if ((asia5MC)==13) {asia5MC=1;}
+if ((timeO)<10) {timeO="0"+timeO;}
+if ((tim+5)==23 && (timeO)<30) {add5MC=" AM";}
+if ((tim+5)==11 && (timeO)<30) {add5MC=" PM";}
+
+<!--DAYLIGHT SAVING-->
+ <!--America-->
+ if (month=="November" || month=="December" || month=="January" || month=="February" || month=="March")  { 
+   { amerLV = amerLV - 1 ; } ((amerLV==0) ? amerLV=12 : amerLV);
+   { amerMNTH = amerMNTH - 1 ; } ((amerMNTH==0) ? amerMNTH=12 : amerMNTH);
+   dstam = " "; }
+
+ if (month=="November" || month=="December" || month=="January" || month=="February" || month=="March")  { 
+ addLV = ((tim-8)<0 || (tim-8)>11 ? " PM" : " AM");
+ addMNTH = ((tim-5)<0 || (tim-5)>11 ? " PM" : " AM"); }
+ else {
+ addLV = ((tim-7)<0 || (tim-7)>11 ? " PM" : " AM");
+ addMNTH = ((tim-4)<0 || (tim-4)>11 ? " PM" : " AM"); }
+ 
+ <!--Australia-->
+  if (month=="April" || month=="May" || month=="June" || month=="July" || month=="August" || month=="September" || month=="October")  { 
+ { austADE = austADE - 1 ; } ((austADE==0) ? austADE=12 : austADE);
+ { austDER = austDER - 1 ; } ((austDER==0) ? austDER=12 : austDER);
+ { austMEL = austMEL - 1 ; } ((austMEL==0) ? austMEL=12 : austMEL);
+ { austSYD = austSYD - 1 ; } ((austSYD==0) ? austSYD=12 : austSYD);
+ { austWEL = austWEL - 1 ; } ((austWEL==0) ? austWEL=12 : austWEL);
+   dstau = " ";
+   dstnz = " "; }
+ if (month=="March" && date>15)  {{ austWEL = austWEL - 1 ; } ((austWEL==0) ? austWEL=12 : austWEL);
+   dstnz = " "; }
+
+ if (month=="April" || month=="May" || month=="June" || month=="July" || month=="August" || month=="September" || month=="October")  { 
+ addADE = ((tim+8)<12 || (tim+8)>23 ? " AM" : " PM");
+ addDER = ((tim+8)<12 || (tim+8)>23 ? " AM" : " PM"); 
+ addMEL = ((tim+10)<12 || (tim+10)>23 ? " AM" : " PM");
+ addSYD = ((tim+10)<12 || (tim+10)>23 ? " AM" : " PM"); 
+ addWEL = ((tim+0)<12 || (tim+0)>23 ? " PM" : " AM"); }
+ else {
+ addADE = ((tim+9)<12 || (tim+9)>23 ? " AM" : " PM");
+ addDER = ((tim+9)<12 || (tim+9)>23 ? " AM" : " PM");
+ addMEL = ((tim+11)<12 || (tim+11)>23 ? " AM" : " PM");
+ addSYD = ((tim+11)<12 || (tim+11)>23 ? " AM" : " PM");
+ addWEL = ((tim+1)<12 || (tim+1)>23 ? " PM" : " AM"); }
+
+ <!--Europe-->
+ if (month=="November" || month=="December" || month=="January" || month=="February" || month=="March")  { 
+ { euro1eu = euro1eu - 1 ; } ((euro1eu==0) ? euro1eu=12 : euro1eu);
+ { euro2eu = euro2eu - 1 ; } ((euro2eu==0) ? euro2eu=12 : euro2eu);
+ { euro3eu = euro3eu - 1 ; } ((euro3eu==0) ? euro3eu=12 : euro3eu);
+ { euro4eu = euro4eu - 1 ; } ((euro4eu==0) ? euro4eu=12 : euro4eu);
+ { euro5eu = euro5eu - 1 ; } ((euro5eu==0) ? euro5eu=12 : euro5eu);
+   dsteu = " "; }
+
+ if (month=="September" || month=="October" || month=="November" || month=="December" || month=="January" || month=="February" || month=="March")  { 
+ { euroMOS = euroMOS - 1 ; } ((euroMOS==0) ? euroMOS=12 : euroMOS);
+   dstru = " "; }
+
+ if (month=="November" || month=="December" || month=="January" || month=="February" || month=="March")  { 
+ add1eu = ((tim+0)<12 || (tim+0)>23 ? " AM" : " PM");
+ add2eu = ((tim+1)<12 || (tim+1)>23 ? " AM" : " PM");
+ add3eu = ((tim+2)<12 || (tim+2)>23 ? " AM" : " PM");
+ add4eu = ((tim+3)<12 || (tim+3)>23 ? " AM" : " PM");
+ add5eu = ((tim+4)<12 || (tim+4)>23 ? " AM" : " PM"); }
+ else {
+ add1eu = ((tim+1)<12 || (tim+1)>23 ? " AM" : " PM");
+ add2eu = ((tim+2)<12 || (tim+2)>23 ? " AM" : " PM");
+ add3eu = ((tim+3)<12 || (tim+3)>23 ? " AM" : " PM");
+ add4eu = ((tim+4)<12 || (tim+4)>23 ? " AM" : " PM");
+ add5eu = ((tim+5)<12 || (tim+5)>23 ? " AM" : " PM"); }
+
+ if (month=="September" || month=="October" || month=="November" || month=="December" || month=="January" || month=="February" || month=="March")  { 
+ addMOS = ((tim+3)<12 || (tim+3)>23 ? " AM" : " PM"); }
+ else {  addMOS = ((tim+4)<12 || (tim+4)>23 ? " AM" : " PM"); }
+
+ document.form2.africa.selectedIndex;
+ document.form2.america.selectedIndex;
+ document.form2.asia.selectedIndex;
+ document.form2.australia.selectedIndex;
+ document.form2.europe.selectedIndex;
+ document.form2.timer1.value;
+ document.form2.timer2.value;
+ document.form2.timer3.value;
+ document.form2.timer4.value;
+ document.form2.timer5.value;
+
+   if (document.form2.africa.selectedIndex == 1) {document.form2.timer1.value = afra0af + ":" + time1 + ":" + time2 + add0af;}
+   if (document.form2.africa.selectedIndex == 2) {document.form2.timer1.value = afra0af + ":" + time1 + ":" + time2 + add0af;}
+   if (document.form2.africa.selectedIndex == 3) {document.form2.timer1.value = afra3af + ":" + time1 + ":" + time2 + add3af;}
+   if (document.form2.africa.selectedIndex == 4) {document.form2.timer1.value = afra1af + ":" + time1 + ":" + time2 + add1af;}
+   if (document.form2.africa.selectedIndex == 5) {document.form2.timer1.value = afra2af + ":" + time1 + ":" + time2 + add2af;}
+   if (document.form2.africa.selectedIndex == 6) {document.form2.timer1.value = afra2af + ":" + time1 + ":" + time2 + add2af;}
+   if (document.form2.africa.selectedIndex == 7) {document.form2.timer1.value = afra0af + ":" + time1 + ":" + time2 + add0af;}
+   if (document.form2.africa.selectedIndex == 8) {document.form2.timer1.value = afra0af + ":" + time1 + ":" + time2 + add0af;}
+   if (document.form2.africa.selectedIndex == 9) {document.form2.timer1.value = afra2af + ":" + time1 + ":" + time2 + add2af;}
+   if (document.form2.africa.selectedIndex == 10) {document.form2.timer1.value = afra0af + ":" + time1 + ":" + time2 + add0af;}
+   if (document.form2.africa.selectedIndex == 11) {document.form2.timer1.value = afra2af + ":" + time1 + ":" + time2 + add2af;}
+   if (document.form2.africa.selectedIndex == 12) {document.form2.timer1.value = afra3af + ":" + time1 + ":" + time2 + add3af;}
+   if (document.form2.africa.selectedIndex == 13) {document.form2.timer1.value = afra2af + ":" + time1 + ":" + time2 + add2af;}
+   if (document.form2.africa.selectedIndex == 14) {document.form2.timer1.value = afra1af + ":" + timeO + ":" + time2 + add1af;}
+   if (document.form2.africa.selectedIndex == 15) {document.form2.timer1.value = afra2af + ":" + time1 + ":" + time2 + add2af;}
+   if (document.form2.africa.selectedIndex == 16) {document.form2.timer1.value = afra2af + ":" + time1 + ":" + time2 + add2af;}
+   if (document.form2.africa.selectedIndex == 17) {document.form2.timer1.value = afra3af + ":" + time1 + ":" + time2 + add3af;}
+   if (document.form2.africa.selectedIndex == 18) {document.form2.timer1.value = afra2af + ":" + time1 + ":" + time2 + add2af;}
+   if (document.form2.africa.selectedIndex == 19) {document.form2.timer1.value = afra0af + ":" + time1 + ":" + time2 + add0af;}
+   if (document.form2.africa.selectedIndex == 20) {document.form2.timer1.value = afra1af + ":" + time1 + ":" + time2 + add1af;}
+
+   if (document.form2.america.selectedIndex == 1) {document.form2.timer2.value = amer5am + ":" + time1 + ":" + time2 + add5am;}
+   if (document.form2.america.selectedIndex == 2) {document.form2.timer2.value = amer3am + ":" + time1 + ":" + time2 + add3am;}
+   if (document.form2.america.selectedIndex == 3) {document.form2.timer2.value = amer4am + ":" + time1 + ":" + time2 + add4am;}
+   if (document.form2.america.selectedIndex == 4) {document.form2.timer2.value = amer4am + ":" + time1 + ":" + time2 + add4am;}
+   if (document.form2.america.selectedIndex == 5) {document.form2.timer2.value = amerMNTH + ":" + time1 + ":" + time2 + addMNTH + dstam;}
+   if (document.form2.america.selectedIndex == 6) {document.form2.timer2.value = amer10am + ":" + time1 + ":" + time2 + add10am;}
+   if (document.form2.america.selectedIndex == 7) {document.form2.timer2.value = amer5am + ":" + time1 + ":" + time2 + add5am;}
+   if (document.form2.america.selectedIndex == 8) {document.form2.timer2.value = amerLV + ":" + time1 + ":" + time2 + addLV + dstam;}
+   if (document.form2.america.selectedIndex == 9) {document.form2.timer2.value = amer6am + ":" + time1 + ":" + time2 + add6am;}
+   if (document.form2.america.selectedIndex == 10) {document.form2.timer2.value = amer5am + ":" + time1 + ":" + time2 + add5am;}
+   if (document.form2.america.selectedIndex == 11) {document.form2.timer2.value = amer3am + ":" + time1 + ":" + time2 + add3am;}
+   if (document.form2.america.selectedIndex == 12) {document.form2.timer2.value = amerMNTH + ":" + time1 + ":" + time2 + addMNTH + dstam;}
+   if (document.form2.america.selectedIndex == 13) {document.form2.timer2.value = amerMNTH + ":" + time1 + ":" + time2 + addMNTH + dstam;}
+   if (document.form2.america.selectedIndex == 14) {document.form2.timer2.value = amer5am + ":" + time1 + ":" + time2 + add5am;}
+   if (document.form2.america.selectedIndex == 15) {document.form2.timer2.value = amer6am + ":" + time1 + ":" + time2 + add6am;}
+   if (document.form2.america.selectedIndex == 16) {document.form2.timer2.value = amer4am + ":" + time1 + ":" + time2 + add4am;}
+   if (document.form2.america.selectedIndex == 17) {document.form2.timer2.value = amer4am + ":" + time1 + ":" + time2 + add4am;}
+   if (document.form2.america.selectedIndex == 18) {document.form2.timer2.value = amer3am + ":" + time1 + ":" + time2 + add3am;}
+   if (document.form2.america.selectedIndex == 19) {document.form2.timer2.value = amerMNTH + ":" + time1 + ":" + time2 + addMNTH + dstam;}
+   if (document.form2.america.selectedIndex == 20) {document.form2.timer2.value = amerLV + ":" + time1 + ":" + time2 + addLV + dstam;}
+
+   if (document.form2.asia.selectedIndex == 1) {document.form2.timer3.value = asia3as + ":" + time1 + ":" + time2 + add3as;}
+   if (document.form2.asia.selectedIndex == 2) {document.form2.timer3.value = asia2as + ":" + time1 + ":" + time2 + add2as;}
+   if (document.form2.asia.selectedIndex == 3) {document.form2.timer3.value = asia4as + ":" + time1 + ":" + time2 + add4as;}
+   if (document.form2.asia.selectedIndex == 4) {document.form2.timer3.value = asia7as + ":" + time1 + ":" + time2 + add7as;}
+   if (document.form2.asia.selectedIndex == 5) {document.form2.timer3.value = asia8as + ":" + time1 + ":" + time2 + add8as;}
+   if (document.form2.asia.selectedIndex == 6) {document.form2.timer3.value = asia5MC + ":" + timeO + ":" + time2 + add5MC;}
+   if (document.form2.asia.selectedIndex == 7) {document.form2.timer3.value = asia3as + ":" + time1 + ":" + time2 + add3as;}
+   if (document.form2.asia.selectedIndex == 8) {document.form2.timer3.value = asia4as + ":" + time1 + ":" + time2 + add4as;}
+   if (document.form2.asia.selectedIndex == 9) {document.form2.timer3.value = asia7as + ":" + time1 + ":" + time2 + add7as;}
+   if (document.form2.asia.selectedIndex == 10) {document.form2.timer3.value = asia8as + ":" + time1 + ":" + time2 + add8as;}
+   if (document.form2.asia.selectedIndex == 11) {document.form2.timer3.value = asia7as + ":" + time1 + ":" + time2 + add7as;}
+   if (document.form2.asia.selectedIndex == 12) {document.form2.timer3.value = asia5as + ":" + time1 + ":" + time2 + add5as;}
+   if (document.form2.asia.selectedIndex == 13) {document.form2.timer3.value = asia8as + ":" + time1 + ":" + time2 + add8as;}
+   if (document.form2.asia.selectedIndex == 14) {document.form2.timer3.value = asia5MC + ":" + timeO + ":" + time2 + add5MC;}
+   if (document.form2.asia.selectedIndex == 15) {document.form2.timer3.value = asia3as + ":" + time1 + ":" + time2 + add3as;}
+   if (document.form2.asia.selectedIndex == 16) {document.form2.timer3.value = asia9as + ":" + time1 + ":" + time2 + add9as;}
+   if (document.form2.asia.selectedIndex == 17) {document.form2.timer3.value = asia9as + ":" + time1 + ":" + time2 + add9as;}
+   if (document.form2.asia.selectedIndex == 18) {document.form2.timer3.value = asia8as + ":" + time1 + ":" + time2 + add8as;}
+   if (document.form2.asia.selectedIndex == 19) {document.form2.timer3.value = asia8as + ":" + time1 + ":" + time2 + add8as;}
+   if (document.form2.asia.selectedIndex == 20) {document.form2.timer3.value = asia9as + ":" + time1 + ":" + time2 + add9as;}
+
+   if (document.form2.australia.selectedIndex == 1) {document.form2.timer4.value = austADE + ":" + time1 + ":" + time2 + addADE + dstau;}
+   if (document.form2.australia.selectedIndex == 2) {document.form2.timer4.value = austWEL + ":" + time1 + ":" + time2 + addWEL + dstnz;}
+   if (document.form2.australia.selectedIndex == 3) {document.form2.timer4.value = austBRI + ":" + time1 + ":" + time2 + addBRI + dstau;}
+   if (document.form2.australia.selectedIndex == 4) {document.form2.timer4.value = austSYD + ":" + time1 + ":" + time2 + addSYD + dstau;}
+   if (document.form2.australia.selectedIndex == 5) {document.form2.timer4.value = austWEL + ":" + time1 + ":" + time2 + addWEL + dstnz;}
+   if (document.form2.australia.selectedIndex == 6) {document.form2.timer4.value = austDER + ":" + time1 + ":" + time2 + addDER + dstau;}
+   if (document.form2.australia.selectedIndex == 7) {document.form2.timer4.value = austMEL + ":" + time1 + ":" + time2 + addMEL + dstau;}
+   if (document.form2.australia.selectedIndex == 8) {document.form2.timer4.value = austPER + ":" + time1 + ":" + time2 + addPER;}
+   if (document.form2.australia.selectedIndex == 9) {document.form2.timer4.value = austSYD + ":" + time1 + ":" + time2 + addSYD + dstau;}
+   if (document.form2.australia.selectedIndex == 10) {document.form2.timer4.value = austTOW + ":" + time1 + ":" + time2 + addTOW;}
+   if (document.form2.australia.selectedIndex == 11) {document.form2.timer4.value = austWEL + ":" + time1 + ":" + time2 + addWEL + dstnz;}
+
+   if (document.form2.europe.selectedIndex == 1) {document.form2.timer5.value = euro2eu + ":" + time1 + ":" + time2 + add2eu + dsteu;}
+   if (document.form2.europe.selectedIndex == 2) {document.form2.timer5.value = euro3eu + ":" + time1 + ":" + time2 + add3eu + dsteu;}
+   if (document.form2.europe.selectedIndex == 3) {document.form2.timer5.value = euro2eu + ":" + time1 + ":" + time2 + add2eu + dsteu;}
+   if (document.form2.europe.selectedIndex == 4) {document.form2.timer5.value = euro3eu + ":" + time1 + ":" + time2 + add3eu + dsteu;}
+   if (document.form2.europe.selectedIndex == 5) {document.form2.timer5.value = euro2eu + ":" + time1 + ":" + time2 + add2eu + dsteu;}
+   if (document.form2.europe.selectedIndex == 6) {document.form2.timer5.value = euro2eu + ":" + time1 + ":" + time2 + add2eu + dsteu;}
+   if (document.form2.europe.selectedIndex == 7) {document.form2.timer5.value = euro1eu + ":" + time1 + ":" + time2 + add1eu + dsteu;}
+   if (document.form2.europe.selectedIndex == 8) {document.form2.timer5.value = euro2eu + ":" + time1 + ":" + time2 + add2eu + dsteu;}
+   if (document.form2.europe.selectedIndex == 9) {document.form2.timer5.value = euro3eu + ":" + time1 + ":" + time2 + add3eu + dsteu;}
+   if (document.form2.europe.selectedIndex == 10) {document.form2.timer5.value = euro1eu + ":" + time1 + ":" + time2 + add1eu + dsteu;}
+   if (document.form2.europe.selectedIndex == 11) {document.form2.timer5.value = euro1eu + ":" + time1 + ":" + time2 + add1eu + dsteu;}
+   if (document.form2.europe.selectedIndex == 12) {document.form2.timer5.value = euro2eu + ":" + time1 + ":" + time2 + add2eu + dsteu;}
+   if (document.form2.europe.selectedIndex == 13) {document.form2.timer5.value = euroMOS + ":" + time1 + ":" + time2 + addMOS + dstru;}
+   if (document.form2.europe.selectedIndex == 14) {document.form2.timer5.value = euro2eu + ":" + time1 + ":" + time2 + add2eu + dsteu;}
+   if (document.form2.europe.selectedIndex == 15) {document.form2.timer5.value = euro2eu + ":" + time1 + ":" + time2 + add2eu + dsteu;}
+   if (document.form2.europe.selectedIndex == 16) {document.form2.timer5.value = euroREY + ":" + time1 + ":" + time2 + addREY;}
+   if (document.form2.europe.selectedIndex == 17) {document.form2.timer5.value = euro3eu + ":" + time1 + ":" + time2 + add3eu + dsteu;}
+   if (document.form2.europe.selectedIndex == 18) {document.form2.timer5.value = euro4eu + ":" + time1 + ":" + time2 + add4eu + dsteu;}
+   if (document.form2.europe.selectedIndex == 19) {document.form2.timer5.value = euro2eu + ":" + time1 + ":" + time2 + add2eu + dsteu;}
+   if (document.form2.europe.selectedIndex == 20) {document.form2.timer5.value = euro2eu + ":" + time1 + ":" + time2 + add2eu + dsteu;}
+
+   if (document.form2.africa.selectedIndex == "a" || document.form2.america.selectedIndex == "b") return;
+   if (document.form2.asia.selectedIndex == "c" || document.form2.australia.selectedIndex == "d") return;
+   if (document.form2.europe.selectedIndex == "e") return;
+
+setTimeout("timezone()", 1000);
+ }
+
+// -->
+</script>
+
+<script language="javascript" type="text/javascript">
+function about() {
+        DispWin = window.open('','NewWin','toolbar=no,status=no,width=330,height=105')
+        message = "<title>About</title><body bgcolor=#ffff00><font size=2 face=verdana, arial, helvetica, sans-serif><b>World-Times</b></font>";
+        message += "<font size=1 face=verdana, arial, helvetica, sans-serif> <b>(Copyright &copy; 2001)</b></font><br />";
+        message += "<font size=1 face=verdana, arial, helvetica, sans-serif><b>Created by: </b>Sandeep Gangadharan.<br />";
+        message += "<b>Home Page: </b><a href=http://web1.mtnl.net.in/~sivam/>Sandeep's Nook</a><br />";
+        message += "<b>E-mail: </b><a href='mailto:sivam@bol.net.in?Subject=About World Times'>sivam@bol.net.in</a><br />";
+        message += "<hr noshade />Do contact me for any bug reports or any suggestions.</font<H4>World Time<H4>
+<h6>Third party scripts</h6>
+<center><h3>1 : To get the script click on view---->> Source </h3></center>
+<center><h3>The html coding will appear  </h3></center>
+<center><h3>Copy the script Source placed between HEAD tag and paste on your page </h3></center>
+<center><h3>2 :  Or save this page on your harddisk by File->> SaveAs  </h3></center>
+
+
+<font color = red size = 4> To get  more scripts,source code,viruses,softwares contact at vinodkotiya24@rediffmail.com </font>
+
+<hr><font color = white > <center><a href ="..\index.html"> HOME  </a>| <a href ="..\source.html"> BACK </a> | <a href ="..\stand.html"> STAND ALONES </a>| <a href ="..\aboutme.html"> About </a> </center></font><hr>></body><br />";
+        DispWin.document.write(message);
+        DispWin.moveTo(400,100);
+}
+</script>
+
+<script language="javascript" type="text/javascript">
+<!--
+function help() {
+        DispWin = window.open('','NewWin','toolbar=no,status=no,width=350,height=124,scrollbars')
+        message1 = "<title>Help</title><body bgcolor=#ffff00><font size=2 face=verdana, arial, helvetica, sans-serif><b>World-Times:</b></font><br />";
+        message1 += "<font size=1 face=verdana, arial, helvetica, sans-serif>This is a World-Times script. You can simultaneously view the time in 5 different cities covering";
+        message1 += " 5 different continents. In all you can find out the time in 91 given cities situated in the 6 major continents. Just choose the city and the time will";
+        message1 += " automatically  be displayed in  the text box just below the respective drop down menu. This script supports Daylight Saving Time.<br /><br />";
+        message1 += "<b>The Daylight Savings Time Rules are given below:</b>";
+        message1 += "<ul><li>USA/Canada: (April - October)</li>";
+        message1 += "<li>UK/Europe: (March - October)</li>";
+	message1 += "<li>Australia: (October - March)</li>";
+        message1 += "<li>New Zealand: (October -March)</li>";
+        message1 += "<li>Russia: (March - September)</li></ul><hr /></font></body>";
+        DispWin.document.write(message1);
+        DispWin.moveTo(350,100);
+}
+// -->
+</script>
+
+<!-- This goes in the BODY of the html file -->
+<!-- Note the script in the BODY tag -->
+
+<body onLoad="timezone();">
+
+<form name="form2">
+<table border="0" bgcolor="c0c0c0" cellspacing="0" cellpadding="3">
+  <tr>
+     <td bgcolor="#000080">
+        <font size="2" face="verdana, arial, helvetica, sans-serif" color="#ffffff"><b>World-Times</b></font>
+     </td>
+     <td colspan="4" align="right" bgcolor="#000080" height="1">
+        <input type="button" value="&nbsp;i&nbsp;" onClick="javascript:about();" />
+        <input type="button" value=" ?" onClick="javascript:help();" />
+        <input type="button" value="&nbsp;r&nbsp;" onClick="reset();" />
+     </td>
+  </tr>
+  <tr>
+    <td>
+        <font size="1" face="verdana, arial, helvetica, sans-serif"><b>Africa</b></font>
+    </td>
+    <td>
+        <font size="1" face="verdana, arial, helvetica, sans-serif"><b>The Americas</b></font>
+    </td>
+    <td>
+        <font size="1" face="verdana, arial, helvetica, sans-serif"><b>Asia</b></font>
+    </td>
+    <td>
+        <font size="1" face="verdana, arial, helvetica, sans-serif"><b>Oceania</b></font>
+    </td>
+    <td>
+        <font size="1" face="verdana, arial, helvetica, sans-serif"><b>Europe</b></font>
+    </td>
+  </tr>
+  <tr>
+    <td>
+          <select name="africa" onChange="document.form2.timer1.focus();">
+          <option value="a" selected>&lt; Select &gt;&nbsp;</option>
+          <option value="1">Abidjan</option>
+          <option value="2">Accra</option>
+          <option value="3">Addis Ababa</option>
+          <option value="4">Algiers</option>
+          <option value="5">Cairo</option>
+          <option value="6">Cape Town</option>
+          <option value="7">Casablanca</option>
+          <option value="8">Dakar</option>
+          <option value="9">Durban</option>
+          <option value="10">Freetown</option>
+          <option value="11">Harare</option>
+          <option value="12">Kampala</option>
+          <option value="13">Khartoum</option>
+          <option value="14">Kinshasha</option>
+          <option value="15">Luanda</option>
+          <option value="16">Mbala</option>
+          <option value="17">Nairobi</option>
+          <option value="18">Pretoria</option>
+          <option value="19">Rabat</option>
+          <option value="20">Tripoli</option>
+          </select>
+    </td>
+    <td>
+          <select name="america" onChange="document.form2.timer2.focus();">
+          <option value="b" selected>&lt; Select &gt;&nbsp;</option>
+          <option value="1">Bogota</option>
+          <option value="2">Buenos Aires</option>
+          <option value="3">Caracas</option>
+          <option value="4">Georgetown</option>
+          <option value="5">Havana</option>
+          <option value="6">Honolulu</option>
+          <option value="7">Lima</option>
+          <option value="8">Los Angeles</option>
+          <option value="9">Managua</option>
+          <option value="10">Mexico City</option>
+          <option value="11">Montevideo</option>
+          <option value="12">Montreal</option>
+          <option value="13">New York</option>
+          <option value="14">Quito</option>
+          <option value="15">San José</option>
+          <option value="16">San Juan</option>
+          <option value="17">Santiago</option>
+          <option value="18">Sao Paulo</option>
+          <option value="19">Toronto</option>
+          <option value="20">Vancouver</option>
+          </select>
+    </td>
+    <td>
+          <select name="asia" onChange="document.form2.timer3.focus();">
+          <option value="c" selected>&lt; Select &gt;&nbsp;</option>
+          <option value="1">Aden</option>
+          <option value="2">Amman</option>
+          <option value="3">Baghdad</option>
+          <option value="4">Bangkok</option>
+          <option value="5">Beijing</option>
+          <option value="6">Colombo</option>
+          <option value="7">Doha</option>
+          <option value="8">Dubai</option>
+          <option value="9">Hanoi</option>
+          <option value="10">Hong Kong</option>
+          <option value="11">Jakarta</option>
+          <option value="12">Karachi</option>
+          <option value="13">Kuala Lumpur</option>
+          <option value="14">Mumbai</option>
+          <option value="15">Muscat</option>
+          <option value="16">Pyongyang</option>
+          <option value="17">Seoul</option>
+          <option value="18">Shanghai</option>
+          <option value="19">Singapore</option>
+          <option value="20">Tokyo</option>
+          </select>
+    </td>
+      <td>
+          <select name="australia" onChange="document.form2.timer4.focus();">
+          <option value="d" selected>&lt; Select &gt;&nbsp;</option>
+          <option value="1">Adelaide</option>
+          <option value="2">Auckland</option>
+          <option value="3">Brisbane</option>
+          <option value="4">Canberra</option>
+          <option value="5">Christchurch&nbsp;&nbsp;</option>
+          <option value="6">Derby</option>
+          <option value="7">Melbourne</option>
+          <option value="8">Perth</option>
+          <option value="9">Sydney</option>
+          <option value="10">Townsville</option>
+          <option value="11">Wellington</option>  
+          </select>
+    </td>
+    <td>
+          <select name="europe" onChange="document.form2.timer5.focus();">
+          <option value="e" selected>&lt; Select &gt;&nbsp;</option>
+          <option value="1">Antwerp</option>
+          <option value="2">Athens</option>
+          <option value="3">Berlin</option>
+          <option value="4">Bucharest</option>
+          <option value="5">Budapest</option>
+          <option value="6">Copenhagen</option>
+          <option value="7">Dublin</option>
+          <option value="8">Geneva</option>
+          <option value="9">Istanbul</option>
+          <option value="10">Lisbon</option>
+          <option value="11">London</option>
+          <option value="12">Luxembourg</option>
+          <option value="13">Moscow</option>
+          <option value="14">Oslo</option>
+          <option value="15">Prague</option>
+          <option value="16">Reykjavik</option>
+          <option value="17">Sarajevo</option>
+          <option value="18">Sofia</option>
+          <option value="19">Vienna</option>
+          <option value="20">Warsaw</option>
+          </select>
+    </td>
+  <tr>
+    <td align="center"><br />
+        <input name="timer1" size="12" value="??" onFocus="timezone();" />
+    </td>
+    <td align="center"><br />
+        <input name="timer2" size="12" value="??" onFocus="timezone();" />
+    </td>
+    <td align="center"><br />
+       <input name="timer3" size="12" value="??" onFocus="timezone();" />
+    </td>
+    <td align="center"><br />
+       <input name="timer4" size="12" value="??" onFocus="timezone();" />
+    </td>
+    <td align="center"><br />
+       <input name="timer5" size="12" value="??" onFocus="timezone();" />
+    </td>
+  </tr>
+</table>
+</form>
+
+
+</HEAD> 
+
+
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// --->
+<!---                 COPY THE SCRIPT UP TO BEFORE /HEAD AND APPLY ON YOUR PAGE --->
+
+     <BODY bgcolor = #ooooff text = #ffff00>   
+
+
+     </BODY> 
+ </HTML>

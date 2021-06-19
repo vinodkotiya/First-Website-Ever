@@ -1,0 +1,36 @@
+http://build.tripod.lycos.com/hpstudio/filemanager/index.jsp
+vinter
+email vinodkotiya24@rediffail.com	2451982
+vinod_vin007@yahoo		vin24051982
+index.html
+stand.html
+source.html
+aboutme.html
+unavail.html
+source/vin.gif
+source/vinod.gif
+///////////////////////////// SOURCE CODE ////////////////////////////////
+
+source/fone.zip
+source/break.zip
+source/clock.zip
+source/dhun.html
+source/bank.html  *
+source/kramchay.html	*
+///////////////////////////// STAND ALONE /////////////////////////////////
+
+stand/dhun.zip		upload=yes
+stand/script.zip	*	upload=
+stand/web.zip	*	upload=
+stand/convert.zip		upload=yes
+stand/all2html.zip	v2.0	upload=yes
+stand/fone.zip		upload=
+stand/indra.zip		upload =yes
+stand/remind.zip	*	upload=
+stand/splitmerg.zip	v1.0	upload=yes
+stand/break.zip		upload=yes
+stand/kramchay.zip	*	upload
+stand/bank.zip	*	upload
+stand/
+stand/
+stand/

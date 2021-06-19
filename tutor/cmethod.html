@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <title>METHODS</title>
+</head>
+<body bgcolor="#000000" text="#33ffff">
+            <table border="1" cellpadding="3" style="border-collapse: collapse" width="63%" id="AutoNumber1" bordercolorlight="#808080" bordercolordark="#800080" height="67">
+              <tr>
+            <B>
+            <FONT 
+            face=arial style="FONT-SIZE: 13px" color="#6c7ceb">
+                <td width="33%" align="center" height="16">
+            <B>
+    <FONT face="arial" 
+      style="FONT-SIZE: 13px; font-weight:700" color="#00BFFF">
+                <u>
+            <a href="../games.html" style="color: #cc33cc; text-decoration: none"><font color="#00BFFF"><u>Games</u></font></a></u></FONT></B></td>
+                <td width="33%" align="center" height="16">
+            <FONT 
+            face=arial style="FONT-SIZE: 13px; font-weight:700" color="#6c7ceb">
+            <a href="../stand.html" style="color: #cc33cc; text-decoration: none">
+    <FONT face="arial" 
+      style="FONT-SIZE: 13px" color="#00BFFF"><u>My
+                Projects</u></FONT><u><FONT color=#00bfff face="arial" 
+      style="FONT-SIZE: 13px"> </FONT> </u> </a></FONT></td>
+                <td width="34%" align="center" height="16">
+            <B>
+                <FONT color=#00bfff face="arial" 
+      style="FONT-SIZE: 13px">&nbsp;<u><a href="../gate.html" style="color: #cc33cc; text-decoration: none"><font color="#00BFFF"><u>GATE
+            </u>
+            </font></a></u> </FONT></B></td>
+                </FONT></B>
+              </tr>
+              <tr>
+            <B>
+            <FONT 
+            face=arial style="FONT-SIZE: 13px" color="#6c7ceb">
+                  <td width="33%" align="center" height="15">
+                  <font color="#00BFFF" face="arial" style="font-size: 13px; font-weight: 700">
+                  <a href="../fun.html" style="color: #cc33cc; text-decoration: none"><u><font color="#00BFFF">FUN </font> </u>
+                  </a></font></td>
+                  <td width="33%" align="center" height="15">
+            <FONT color=#FFFF00 face=verdana 
+                  size=2><B><font color="#FFFF00">
+            <a href="../index.html" style="color: #cc33cc; text-decoration: none"><u><font color="#FFFF00">
+            Home</font></u></a></font></B></FONT></td>
+                  <td width="34%" align="center" height="15">
+            <B>
+                  <FONT color=#00bfff face="arial" 
+      style="FONT-SIZE: 13px; font-weight:700"><u>
+            <a href="../source.html" style="color: #cc33cc; text-decoration: none">
+            <font color="#00BFFF"><u>Source Code</u></font></a></u></FONT></B></td>
+                  </FONT></B>
+              </tr>
+              <tr>
+            <B>
+            <FONT 
+            face=arial style="FONT-SIZE: 13px" color="#6c7ceb">
+                  <td width="33%" height="16">
+                  <p align="center"><u><font color="#00BFFF">
+                  <span style="font-weight: 700; font-size: 13px">Virus</span></font></u></td>
+                  <td width="33%" height="16">
+                  <p align="center">
+            <B>
+                  <font color="#00BFFF" face="arial" style="font-size: 13px">
+            <a href="../tutors.html" style="color: #cc33cc; text-decoration: none"><u><font color="#00BFFF">Tutorials</font></u></a></font></B></td>
+                  <td width="34%" height="16"></td>
+                  </FONT></B>
+              </tr>
+              </table>
+            <p>
+<big><big><u><font color="#FFFFFF">C++ By VINOD KOTIYA</font></u><font color="#ff0000"><br>
+<br>
+Static Member Function :-</font></big></big> May only directly refer to static
+member&nbsp;also global<br>
+ &nbsp;&nbsp; &nbsp; functions &amp; data may be assessed.<br>
+</p>
+<ul>
+  
+  <li> &nbsp;&nbsp; not have this pointer.</li>
+  
+  <li> &nbsp;&nbsp; not be virtual</li>
+  
+  <li> &nbsp;&nbsp; not declared as const or volatile</li>
+  
+  <li> &nbsp;&nbsp; there be no static &amp; non static version of same function.</li>
+</ul>
+<big><big><font color="#ff0000"><br>
+<br>
+Passing Objects:-</font></big></big>In call by value passing a copy of the
+object Created. Constructoris not invoke when copy is destroyed but destructor
+Because We want currentstate of object when copy is created if constructor
+invoke it may Initializeobject &amp; change it.<br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Similarly when any function returnedan
+object then A temporary object is automatic creased which holds the return
+value.<br>
+ &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Destruction of both argument &amp;
+return value cause some harm full side effect which is overcome by copy constructor
+&amp; overloading the assignment operator.<br>
+<br>
+<br>
+<br>
+<br>
+<font color="#ff0000"><big><big>Object Assignment:-</big></big></font>If
+the objects are of the same type we can Assign themobj1=obj2<br>
+so the data of obj.2 be copied to data of obj.1,<br>
+<br>
+<br>
+<br>
+<br>
+<big><big><font color="#ff0000">Pointers:-</font></big></big> We can make
+pointers for object similar to other data<br>
+Types<br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Base obj,*P; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Base obj [3],
+*p;<br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; *p=&amp;obj;
+&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; P=obj;<br>
+<br>
+<br>
+Friend function:- Not the member of class but have full access Of private
+&amp; protected members. call without dot operator. It has The&nbsp; argument
+of class equals to the no. of class it is friend.<br>
+&nbsp; Let any function is the friend of 2 classes then<br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; Friend int fun (class A, Class B);<br>
+-&gt; used when overloading of&nbsp; certain type of operator<br>
+-&gt; make easier the creation of some i/o type function<br>
+-&gt; when 2 or more class have member which are inter-related To other part
+of program. Such as check the pop up window is on/off by 2 classes. We make
+a friend function for both which take 2 obj. as&nbsp; argument of both of
+these class and return status.<br>
+-&gt; it may be possible that friend of one class is member of another class.<br>
+Restriction-&gt; derived class dose not inherit<br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; -&gt;not have storage class
+specifies (not declared as extern or static )<br>
+<br>
+<br>
+<br>
+<br>
+<big><big><font color="#ff0000">Friend class :-</font></big></big> Friend
+class &amp; its members function have access to privatemember of the class
+where friend is defined.<br>
+&egrave; &nbsp;&nbsp; It doesn&rsquo;t inherit the first class<br>
+<br>
+<br>
+<br>
+<br>
+<font color="#ff0000"><big><big>Static Class Member:-</big></big></font>
+IF any member declared static only one copy will allocatein memory for all
+obj. irrespective of no of objects irrespective of theno of class.<br>
+-&gt; also redefine the static member outside the class,<br>
+ &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+Class Vin {static int a ; };<br>
+ &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Int vin :: a ;<br>
+-&gt; if allow only one object at time to write on a file<br>
+-&gt; count the number of objects created ( or exist ) with constructer &amp;<br>
+ &nbsp; destructor.<br>
+<br>
+<br>
+&nbsp; <br>
+<big><big><font color="#ff0000">This Pointer :-</font></big></big> Whenever
+a member function is called it is automaticallypassed an implicit argument
+that is a pointer to the invoking object . thispointer is called this.<br>
+ &nbsp; &nbsp; &nbsp; &nbsp; fun( ) { cout &lt;&lt; this&lt;&lt; &ldquo;invoke
+me &ldquo;;}<br>
+also used ( not necessary ) to access the data members,<br>
+ &nbsp; &nbsp; &nbsp; &nbsp; cout &lt;&lt; this -&gt; a ; equivalent to cout
+&lt;&lt; a ;<br>
+<br>
+<br>
+&nbsp;<font color="#ff0000"><big><big> Pointer to derived :-</big></big></font>
+ A base pointer can be used to point to a derivedobjects ( but opposite is
+not true ) base pointer can access only the memberof the derived type were
+imported from the base&nbsp; ( by casting&nbsp;a base pointer in to derived
+pointer we can gain full access to the entirederived class )<br>
+ &nbsp;&nbsp; Base *bp ;<br>
+ &nbsp;&nbsp; Derived d;<br>
+ &nbsp;&nbsp; *bp = &amp;d &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //limited access<br>
+ &nbsp;&nbsp; ( ( derived * ) bp )&agrave;&nbsp; drv member fun ( ); &nbsp;&nbsp;
+&nbsp; //after casing access is possible for derived class<br>
+ &nbsp; &nbsp; *bp ++ ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // go to next bases objectsnot
+derives<br>
+<br>
+<br>
+<font color="#ff0000"><big><big>Constructer (default) :- </big></big></font>
+Function having same name as that of class &amp;no return&nbsp; type<br>
+<font color="#ff0000">Parameterised constructer :-</font> having different
+arguments<br>
+<font color="#ff0000">Copy constructer :- </font>When assigning objects other
+stud B=A then by bit wisecopy B will be exact copy of A i.e. B will be using
+the same piece of allocatedmemory that A is using instead<br>
+allocating&nbsp; its own .When A &amp; B are destroyed the same piece ofmemory
+will freed twice .<br>
+ &nbsp;&nbsp; The&nbsp; same problem occurred when passing &amp; returning
+object (see passing object)<br>
+When copy constructer exist the default bit wise copy is bypassed <br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; Stud (const stud &amp; a ) { &nbsp; } ;<br>
+a is a reference to the obj. on the right side of the initialization<br>
+<br>
+<br>
+<br>
+<big><big><font color="#ff0000">Operator overloading :-</font></big></big><br>
+rettype class name&nbsp; :: operator # (arg.-list )<br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; { &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+&nbsp; }<br>
+where # is the operator to be overloaded<br>
+eg. &nbsp;&nbsp; &nbsp; void Num :: operator ++ ( )<br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {&nbsp; a++ ;&nbsp; b++;
+}<br>
+ &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; call &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; Num &nbsp; &nbsp; N++ &nbsp; &nbsp; &nbsp; or N . ++C&nbsp; )<br>
+<br>
+<img src="../images/opovrld.PNG" alt="example with friend function" width="581" height="386"><br>
+<br>
+operators &nbsp;&nbsp; ? (ternary)&nbsp; , :: ( scope resolution)&nbsp; ,
+&nbsp; . (dot)&nbsp; ,&nbsp; .*&nbsp; not overloaded<br>
+            <table border="1" cellpadding="3" style="border-collapse: collapse" width="63%" id="AutoNumber1" bordercolorlight="#808080" bordercolordark="#800080" height="67">
+              <tr>
+            <B>
+            <FONT 
+            face=arial style="FONT-SIZE: 13px" color="#6c7ceb">
+                <td width="33%" align="center" height="16">
+            <B>
+    <FONT face="arial" 
+      style="FONT-SIZE: 13px; font-weight:700" color="#00BFFF">
+                <u>
+            <a href="../games.html" style="color: #cc33cc; text-decoration: none"><font color="#00BFFF"><u>Games</u></font></a></u></FONT></B></td>
+                <td width="33%" align="center" height="16">
+            <FONT 
+            face=arial style="FONT-SIZE: 13px; font-weight:700" color="#6c7ceb">
+            <a href="../stand.html" style="color: #cc33cc; text-decoration: none">
+    <FONT face="arial" 
+      style="FONT-SIZE: 13px" color="#00BFFF"><u>My
+                Projects</u></FONT><u><FONT color=#00bfff face="arial" 
+      style="FONT-SIZE: 13px"> </FONT> </u> </a></FONT></td>
+                <td width="34%" align="center" height="16">
+            <B>
+                <FONT color=#00bfff face="arial" 
+      style="FONT-SIZE: 13px">&nbsp;<u><a href="../gate.html" style="color: #cc33cc; text-decoration: none"><font color="#00BFFF"><u>GATE
+            </u>
+            </font></a></u> </FONT></B></td>
+                </FONT></B>
+              </tr>
+              <tr>
+            <B>
+            <FONT 
+            face=arial style="FONT-SIZE: 13px" color="#6c7ceb">
+                  <td width="33%" align="center" height="15">
+                  <font color="#00BFFF" face="arial" style="font-size: 13px; font-weight: 700">
+                  <a href="../fun.html" style="color: #cc33cc; text-decoration: none"><u><font color="#00BFFF">FUN </font> </u>
+                  </a></font></td>
+                  <td width="33%" align="center" height="15">
+            <FONT color=#FFFF00 face=verdana 
+                  size=2><B><font color="#FFFF00">
+            <a href="../index.html" style="color: #cc33cc; text-decoration: none"><u><font color="#FFFF00">
+            Home</font></u></a></font></B></FONT></td>
+                  <td width="34%" align="center" height="15">
+            <B>
+                  <FONT color=#00bfff face="arial" 
+      style="FONT-SIZE: 13px; font-weight:700"><u>
+            <a href="../source.html" style="color: #cc33cc; text-decoration: none">
+            <font color="#00BFFF"><u>Source Code</u></font></a></u></FONT></B></td>
+                  </FONT></B>
+              </tr>
+              <tr>
+            <B>
+            <FONT 
+            face=arial style="FONT-SIZE: 13px" color="#6c7ceb">
+                  <td width="33%" height="16">
+                  <p align="center"><u><font color="#00BFFF">
+                  <span style="font-weight: 700; font-size: 13px">Virus</span></font></u></td>
+                  <td width="33%" height="16">
+                  <p align="center">
+            <B>
+                  <font color="#00BFFF" face="arial" style="font-size: 13px">
+            <a href="../tutors.html" style="color: #cc33cc; text-decoration: none"><u><font color="#00BFFF">Tutorials</font></u></a></font></B></td>
+                  <td width="34%" height="16"></td>
+                  </FONT></B>
+              </tr>
+              </table>
+            <p>
+<br>
+</p>
+</body>
+</html>

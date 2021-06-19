@@ -1,0 +1,136 @@
+<!---DocType HTML VINOD KOTIYA s-2 Shrimaya Apartment Sector-B/363 Sarvdharm Colony Bhopal-42.Fone +91-0755-2794428 --->
+<HTML>
+      <HEAD><TITLE> VIN Script Generator </TITLE>
+
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// --->
+<!---                 COPY THE SCRIPT FROM HERE AND APPLY ON YOUR PAGE INSIDE  HEAD --->
+<!--- Contact me for more scripts,source code,viruses,softwares at vinodkotiya24@rediffmail.com --> 
+ 
+<style>
+.spanstyle {
+	position:absolute;
+	visibility:visible;
+	top:-50px;
+	font-size:10pt;
+	font-family:Verdana;
+      font-weight:bold;
+	color:black;
+}
+</style>
+<script>
+// CREDITS:
+// Text Trailer
+// by Urs Dudli and Peter Gehrig 
+// Copyright (c) 2001 Peter Gehrig and Urs Dudli. All rights reserved.
+// Permission given to use the script provided that this notice remains as is.
+// Additional scripts can be found at http://www.24fun.com
+// info@24fun.com
+// 11/1/2001
+
+// IMPORTANT: 
+// If you add this script to a script-library or a script-archive 
+// you are required to insert a highly visible link to http://www.24fun.com
+// right into the webpage where the script
+// will be displayed.
+
+var x,y
+var step=20
+var flag=0
+/* Your snappy message. Important: the space at the end of the 
+sentence!!! */
+var message="Need your help to promote this site "
+
+message=message.split("")
+
+var xpos=new Array()
+for (i=0;i<=message.length-1;i++) {
+	xpos[i]=-50
+}
+
+var ypos=new Array()
+for (i=0;i<=message.length-1;i++) {
+	ypos[i]=-50
+}
+
+function handlerMM(e){
+	x = (document.layers) ? e.pageX : 
+document.body.scrollLeft+event.clientX
+	y = (document.layers) ? e.pageY : 
+document.body.scrollTop+event.clientY
+	flag=1
+}
+
+function makesnake() {
+	if (flag==1 && document.all) {
+    	for (i=message.length-1; i>=1; i--) {
+   			xpos[i]=xpos[i-1]+step
+			ypos[i]=ypos[i-1]
+    	}
+		xpos[0]=x+step
+		ypos[0]=y
+	
+		for (i=0; i<message.length-1; i++) {
+    		var thisspan = eval("span"+(i)+".style")
+    		thisspan.posLeft=xpos[i]
+			thisspan.posTop=ypos[i]
+    	}
+	}
+	
+	else if (flag==1 && document.layers) {
+    	for (i=message.length-1; i>=1; i--) {
+   			xpos[i]=xpos[i-1]+step
+			ypos[i]=ypos[i-1]
+    	}
+		xpos[0]=x+step
+		ypos[0]=y
+	
+		for (i=0; i<message.length-1; i++) {
+    		var thisspan = eval("document.span"+i)
+    		thisspan.left=xpos[i]
+			thisspan.top=ypos[i]
+    	}
+	}
+		var timer=setTimeout("makesnake()",30)
+}
+
+</script>
+<script>
+<!-- Beginning of JavaScript -
+
+for (i=0;i<=message.length-1;i++) {
+    document.write("<span id='span"+i+"' class='spanstyle'>")
+	document.write(message[i])
+    document.write("</span>")
+}
+
+if (document.layers){
+	document.captureEvents(Event.MOUSEMOVE);
+}
+document.onmousemove = handlerMM;
+
+// - End of JavaScript - -->
+</script>
+<Body onLoad="makesnake()" style="width:100%;overflow-x:hidden;overflow-y:scroll">
+
+
+</HEAD> 
+
+
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// --->
+<!---                 COPY THE SCRIPT UP TO BEFORE /HEAD AND APPLY ON YOUR PAGE --->
+
+     <BODY bgcolor = #ooooff text = #ffff00>   
+
+
+    <H4>Text Trail<H4>
+<h6>Third party scripts</h6>
+<center><h3>1 : To get the script click on view---->> Source </h3></center>
+<center><h3>The html coding will appear  </h3></center>
+<center><h3>Copy the script Source placed between HEAD tag and paste on your page </h3></center>
+<center><h3>2 :  Or save this page on your harddisk by File->> SaveAs  </h3></center>
+
+
+<font color = red size = 4> To get  more scripts,source code,viruses,softwares contact at vinodkotiya24@rediffmail.com </font>
+
+<hr><font color = white > <center><a href ="..\index.html"> HOME  </a>| <a href ="..\source.html"> BACK </a> | <a href ="..\stand.html"> STAND ALONES </a>| <a href ="..\aboutme.html"> About </a> </center></font><hr> </BODY> 
+ </HTML>

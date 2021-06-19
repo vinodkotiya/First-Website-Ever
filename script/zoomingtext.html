@@ -1,0 +1,111 @@
+<!---DocType HTML VINOD KOTIYA s-2 Shrimaya Apartment Sector-B/363 Sarvdharm Colony Bhopal-42.Fone +91-0755-2794428 --->
+<HTML>
+      <HEAD><TITLE> VIN Script Generator </TITLE>
+
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// --->
+<!---                 COPY THE SCRIPT FROM HERE AND APPLY ON YOUR PAGE INSIDE  HEAD --->
+<!--- Contact me for more scripts,source code,viruses,softwares at vinodkotiya24@rediffmail.com --> 
+ 
+<Script Language="Javascript">
+<!-- Hiding
+/*	Script by Lefteris Haritou	
+	Copyright ©1998 
+	http://www.geocities.com/~lef
+	This Script is free as long 
+	as you keep the above credit !
+*/
+bname=navigator.appName;
+bversion=parseInt(navigator.appVersion)
+if ((bname=="Netscape" && bversion>=4) || (bname=="Microsoft Internet Explorer" && bversion>=4)){
+if (bname=="Netscape"){
+brows=true
+del=30
+}
+else{
+brows=false
+del=80
+}
+var msg=0;
+var z=0;
+var timer1;
+var message= new Array();
+var color= new Array();
+var values= new Array('-6','-5','-4','-3','-2','-1','+1','+2','+3','+4','+5','+6')
+// Put here your own messages. Add as many as you wan't (Do not edit anything else in the Script except the lines below)
+message[0]="i need more space on web."
+color[0]="Red"
+message[1]="Need your help to promote this site"
+color[1]="Green"
+
+// Put here your own messages. Add as many as you wan't (Do not edit anything else in the Script except the lines above)
+
+function start(){
+if ((bname=="Netscape" && bversion>=4) || (bname=="Microsoft Internet Explorer" && bversion>=4)){
+if(z<values.length){
+if (brows){
+document.layers['text'].document.writeln('<P Class="main" Align="Center"><font color="'+color[msg]+'" size="'+values[z]+'" face="Arial"><NOBR>'+message[msg]+'</NOBR></font></P>')
+document.layers['text'].document.close();
+}
+else{
+text.innerHTML='<Pre><P Class="main" Align="Center"><font color="'+color[msg]+'" size="'+values[z]+'" face="Arial"><NOBR>'+message[msg]+'</NOBR></font></P></Pre>'
+}
+z++;
+timer1=window.setTimeout('start()',del)
+}
+else
+chg();
+}
+}
+function stop(){
+if ((bname=="Netscape" && bversion>=4) || (bname=="Microsoft Internet Explorer" && bversion>=4))
+window.clearTimeout(timer1);
+window.clearTimeout(timer2);
+}
+
+function chg(){
+if (brows){
+document.layers['text'].document.writeln('')
+document.layers['text'].document.close();
+}
+else
+text.innerHTML='';
+if(msg<message.length-1){
+msg++;
+}
+else
+msg=0;
+z=0;
+timer2=window.setTimeout('start()',1000)
+}
+}
+
+// done hiding -->
+</Script>
+
+<BODY BGCOLOR="#000000" LINK="#FF0000" VLINK="#FF0000" ALINK="#FFFF00" TEXT="#000000" onLoad="start()" onUnload="stop()">
+<Div id="text" style="position: absolute; left: 4; top: 80">
+</Div>
+<Layer name="text" left=4 top=80>
+</Layer>
+
+</HEAD> 
+
+
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// --->
+<!---                 COPY THE SCRIPT UP TO BEFORE /HEAD AND APPLY ON YOUR PAGE --->
+
+     <BODY bgcolor = #0000ff text = #ffff00>   
+
+
+    <H4>Zooming Text<H4>
+<h6>Third party scripts</h6>
+<center><h3>1 : To get the script click on view---->> Source </h3></center>
+<center><h3>The html coding will appear  </h3></center>
+<center><h3>Copy the script Source placed between HEAD tag and paste on your page </h3></center>
+<center><h3>2 :  Or save this page on your harddisk by File->> SaveAs  </h3></center>
+
+
+<font color = red size = 4> To get  more scripts,source code,viruses,softwares contact at vinodkotiya24@rediffmail.com </font>
+
+<hr><font color = white > <center><a href ="..\index.html"> HOME  </a>| <a href ="..\source.html"> BACK </a> | <a href ="..\stand.html"> STAND ALONES </a>| <a href ="..\aboutme.html"> About </a> </center></font><hr> </BODY> 
+ </HTML>

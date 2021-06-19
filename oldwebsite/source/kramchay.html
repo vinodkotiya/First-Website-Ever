@@ -1,0 +1,237 @@
+<!-- By VINOD KOTIYA S-2 SHRIMAYA APARTMENT SECTOR-B/363 SARVDHARM COLONY BHOPAL FONE : 2794428----><HTML><HEAD> <TITLE> converted from PERMUTAT.CPP by  vinod kotiya's ALL2HTML converter </TITLE>  </HEAD><BODY BGCOLOR = "#D9E7FF"TEXT = "#0000FF"> <PRE>/////////////  written by : vinod kotiya //////////////////////
+///////    The source code is fully functional and correct
+////// since the code contains some html tags therefor it is looking very odd in browser
+////// hence copy this source from view-->source and remove html tags carefully
+//////		sorry for inconvanience
+
+#include<   conio.h>
+#include<   string.h>
+#include<   stdlib.h>
+#include<   fstream.h>
+#include<   dos.h>
+#include<   process.h>
+
+//********* saare global variable and objects *********************
+ofstream out;            //long live
+char previous[30];      //store previous string in loop
+char filename[20];      //hold o/p .vin filename globally
+unsigned long int count =1;    //geenti
+
+//********************** 7 sub main function **********************
+void title(void);     				       //display me
+char showwarning(int );                                //dhamki
+void interchange(char a[],int ,int );                  //change
+int kramchay(char a[],int ,int );                      //make combinations
+int abortoperation();                                  //durr ke bhago
+void endprogram();                                     //do some formality
+void createhtml();                                     //make webpage
+
+void main()
+{
+
+ char mainchoice = 'y';
+ while(mainchoice == 'y')
+ {
+  clrscr();
+  title();
+  count = 1;                              //reset count
+  char nm[30],filenm[30],choice='n';      //no means don't want to stuck in loop
+  int length;
+  while(choice =='n' || choice == 'N')
+  {
+   cout<<"\nEnter your Name " <<endl;
+   cin>>nm;
+   length = strlen(nm);
+  if(length>5)
+    choice = showwarning(length);
+   else
+    choice = 'y'; //exit from loop
+  }
+  clrscr();
+  title();
+  strcpy(filenm,nm);
+  strcpy(filename,filenm);//making global filename to reopen
+  strcat(filenm,".vin");	 //making extention '.vin'
+  out.open(filenm);          //opening file with the name given by user having extention '.vin'
+  if(length == 1)
+    {cout<<nm;out<<nm;count = 2;}    //eliminating single character bug
+  else
+    kramchay(nm,0,length-1);
+  //out.close();           //closing your file
+  endprogram();
+  cout<<"\n\n\t\tDo you want some more combinations (Y/N)? :- ";
+  mainchoice = getche();
+ }      //end of external while
+
+ getch();
+}
+//******** Display ***************
+void title (void)
+{
+ clrscr();
+ char f=1,d=3;
+ for(int i=0;i<80;i++)
+ cout<<d;
+ cout<<"********************************************************************************";
+ cout<<"****************************** PERMUTATION   ***********************************";
+ cout<<"********************************************************************************"
+     <<"*****************                                               *****************"
+     <<"*************                                                    **************";
+ cout<<"***********    COPYWRITE 2002 VINOD KOTIYA .ALL RIGHTS UNRESERVED   ************";
+ cout<<"*************                                                     **************";
+ for(i=0;i<80;i++)
+ cout<<f;cout<<endl<<endl;
+}
+
+
+//*******  interchange kth character with ith char *******************
+void interchange(char a[],int k,int i)
+{
+ char temp;
+ temp = a[k];
+ a[k] = a[i];
+ a[i] = temp;
+ //cout<<"\nafter interchange"<<a;
+ //return a;
+}
+
+//********  produce all possible combinations of the word ***********
+int kramchay(char a[],int k,int n)
+{
+ int brk =0;
+ if (k==n )
+  {                //execute after each combination
+  return (0);
+  }
+ char b[30];
+ strcpy(b,a);
+
+ for(int i=k;i<=n;i++)
+  {
+   interchange(a,k,i);    //interchange kth character with ith char of a
+    if(strcmp(previous,a)!=0)
+      {cout<<"\n"<<count<<". "<<a;   //show ek,do,teen char
+       out<<"\n"<<count<<". "<<a;count++;
+      }
+    if(count%24 == 1 && n<=5)        //make sound only if length>5
+      {sound(634);delay(200);nosound();delay(60);}
+    if(count%500 == 1)
+     flush(out);                    //flushing the toilet ha ha ....
+    strcpy(previous,a);
+    //delay(1000);
+    kramchay(a,k+1,n);             //call itself, when k == n return back
+    //cout<<"i am below kramchay kiss her "<< k<<" n"<<n;
+    strcpy(a,b);
+
+    if(kbhit() )
+    {//loop breaking algorithm by key pressing:( invented by vinod kotiya
+      brk = abortoperation();break;
+     }
+ //if(brk == 1)
+ // {cout<<"brk==1";return 0;}
+ }                 //end of for
+ if(brk == 1)
+   {
+   endprogram();
+   exit(0);//closing file and exit
+   }
+}
+
+//*************  Ek bar dhamkaaye jub word length badh jaye *************
+char showwarning(int length)
+{
+ char ch;
+ cout<<"Warning:- You have entered "<<length<<" character word Repeating "
+     <<length<<" characters\n Making permutation of this word will take ";
+   if(length == 6)
+    cout<<" 10 kb of your harddisk and will make total 720 combinations in some seconds"
+    <<"\n\nDo you want to  procede (Y/N):-  ";
+   else if(length == 7)
+    cout<<" 73 kb of your harddisk and will make total 5040 combinations in some seconds"
+    <<"\n\nDo you want to  procede (Y/N):-  ";
+   else if(length == 8)
+    cout<<" 659 kb of your harddisk and will make total 40320 combinations in several minutes"
+    <<"\n\nIf You want to die press Y otherwise N :- ";
+   else
+    cout<<"very large capacity (in MB) of your harddisk and making combinations more "<<
+    " than millions in several hours or days.\n\n\t\tIf you stuck in a dangerous loop"<<
+    " press any key or ctrl+break or Alt + Ctrl + Del \n\t\tGOD BLESS YOU"
+     <<"\n\nIf You want to die press Y otherwise N :- ";
+   ch = getche();
+   return ch;
+}
+
+//********** beech se bhagna ho to *********************************
+int abortoperation()
+{
+ char cho;
+ cout<<"\nDo you want to abort the operation(Y/N):- ";
+ cin>>cho;
+ if(cho == 'y' || cho== 'Y')
+     return 1;
+  else
+    return 0;
+}
+
+//******** perform closing operations on files ************************
+void endprogram()
+{
+ out<<"<hr>\nProgram written by VINOD KOTIYA \n\t\tB.E.(Information Technology)"
+    <<"\n\tBhopal Engineering College Bhopal\n\tFone : (0755)-2794428"
+    <<"\n\tEmail:-surmabhopali@rediffmail.com\n";
+ out.close();
+ getch();clrscr();
+ title();
+ char text[310] = {"6 6 6There are 4 combinations are generated.6The output is also saved in default directory as\"\ 5.vin\" &\"\ 5.html\".6The default directory is the directory in which this executable is present.6To open the *.vin file right click on it choose 'openwith' then 6select NotePad from program list."};
+ for(int j=0;text[j]!='\0';j++)
+ {
+  if(text[j] == '4')               //means showlength
+   {cout<<count-1;j++;}   //by j++ dont show 4=comb and 5=name 6=newline
+  else if(text[j] == '5')         //means show filelength
+   {cout<<filename;j++;}
+  else if(text[j] == '6')
+   {cout<<endl;j++;}
+  cout<<text[j];
+  sound(j+600);
+  delay(40);
+  nosound();
+ }
+ createhtml();                     //create another copy in html format
+}
+//**********  Create an copy of *.vin as *.html *********************
+void createhtml()
+{
+ char destfilename[25],a[80];
+ strcpy(destfilename,filename);
+ strcat(filename,".vin");
+ strcat(destfilename,".html");
+ ifstream source(filename);    //reopening the vin file for making html
+ ofstream desthtml(destfilename);  //creating html file in default folder
+  if(source.fail() || desthtml.fail())
+ {
+  cout<<"\nOne of the source or destination file can't be opened";
+  getch();  exit(0);
+ }
+ desthtml<<"<html>\n<head><title>vinod kotiya's permutation for "<<filename
+	 <<"</title></head>\n<body bgcolor = black text = \"#00ff00\" >"
+	 <<" <     center    >< h 1 >KRAMCHAY< / h1>< / c enter><hr><  marquee  ><h3><font color= \"#0099ff\">"
+	 <<"< u >Program written by VINOD KOTIYA  B.E.(Information Technology)"
+	 <<" Bhopal Engineering College Bhopal Address: s-2 Shrimaya Appt "
+	 <<"Sector-B/363 Sarvdharm Colony Bhopal(Bharat) Fone : (0755)-2794428"
+	 <<" Email:-vinodkotiya24@rediffmail.com\n</font></u></h3><  /  marquee><br>"
+	 <<"<a href= \"data\\aboutme.html\"> CLICK ME </a><pre>";
+ count = 1;     //temperarily used count
+ while(!source.eof())
+ {
+  source.getline(a,79);
+  desthtml<<a<<endl;
+  if(count == 7)
+  desthtml<<"<a href= \"data\\aboutme.html\"><img src=\"data\\vin.jpg\" alt=\"vinod kotiya&apos;s picture\" align =\"Right\"></a><br><br>";
+  count++;
+ }
+  source.close();
+ desthtml<<"</pre></body></html>";
+ desthtml.close();
+
+}
+<PRE> <H4>Promote this site by your contribution http:\\vinodkotiya.tripod.com</H4> <hr> <marquee> <h6> created by VINOD KOTIYA's ALL2HTML Converter </h6></marquee></body></html>

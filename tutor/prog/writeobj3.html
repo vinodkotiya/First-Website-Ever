@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <title>writeobj3</title>
+</head>
+<body>
+// overloading istream and ostream operator<br>
+// ostream&amp; operator &lt;&lt; (ostream&amp;, class_type); &nbsp; //parameter
+by value<br>
+// istream&amp; operator &gt;&gt; (istream&amp;, class_type&amp;);&nbsp;
+//parameter must be by referance<br>
+//when we write data in file it is formatted into left justified field<br>
+// using manipulators b/c witing is easy but getting the data back is hard<br>
+// we have to ensure that the format of data in the file is suitable for
+reading<br>
+// back in .if we not format the data then we have variable length fields
+being<br>
+//written to the file which are very difficult to retrive<br>
+//=========================<br>
+//an alternative approach to file i/o for objects is to write file handling<br>
+//methods for object classes rather than overloading&gt;&gt;&lt;&lt;.<br>
+//this is simpler b/c we can refer directly to the attributes of the object<br>
+//inside its method rather<br>
+#include&lt;fstream.h&gt;<br>
+#include&lt;conio.h&gt;<br>
+#include&lt;string.h&gt;<br>
+#include&lt;iomanip.h&gt;<br>
+<br>
+class square<br>
+{<br>
+&nbsp; int w,b;<br>
+public:<br>
+ int getwidth();<br>
+ int getbreadth();<br>
+ void setwidth(int w_in);<br>
+ void setbreadth(int b_in);<br>
+ void setdata();<br>
+ void showdata();<br>
+};<br>
+<br>
+int square::getwidth()<br>
+{<br>
+ return w;<br>
+}<br>
+int square::getbreadth()<br>
+{<br>
+ return b;<br>
+}<br>
+void square::setwidth(int w_in)<br>
+{<br>
+&nbsp; w = w_in;<br>
+}<br>
+void square::setbreadth(int b_in)<br>
+{<br>
+ b = b_in;<br>
+}<br>
+void square::setdata()<br>
+{<br>
+ cout&lt;&lt;"\nEnter width";<br>
+ cin&gt;&gt;w;<br>
+ cout&lt;&lt;"\nEnter breadth";<br>
+ cin&gt;&gt;b;<br>
+}<br>
+void square::showdata()<br>
+{<br>
+ cout&lt;&lt;"\nwidth: "&lt;&lt;setw(5)&lt;&lt;w;<br>
+ cout&lt;&lt;"\nbreadth: "&lt;&lt;setw(5)&lt;&lt;b&lt;&lt;endl;<br>
+}<br>
+//overloaded &lt;&lt; to handle the output of square objects<br>
+ostream&amp; operator &lt;&lt; (ostream&amp; s, square x)<br>
+{<br>
+ //setw is used to give a consistent format in the file<br>
+ return s&lt;&lt;setw(5)&lt;&lt;x.getwidth()&lt;&lt;setw(5)&lt;&lt;x.getbreadth()&lt;&lt;endl;<br>
+}<br>
+<br>
+//overloaded &gt;&gt;&nbsp; to input of square objects<br>
+istream&amp; operator &gt;&gt; (istream&amp; s,square &amp;x)<br>
+{<br>
+ int w_in,b_in;<br>
+ //because i/p stream is delimited with white spaces,we can<br>
+ //i/p all 2 attributes at ones<br>
+ s&gt;&gt;w_in&gt;&gt;b_in;<br>
+ x.setwidth(w_in);<br>
+ x.setbreadth(b_in);<br>
+ return s;<br>
+}<br>
+void main()<br>
+{<br>
+ clrscr();<br>
+ square obj[3];<br>
+ fstream iofile;<br>
+<br>
+ iofile.open("c:\\cdata\\objin.vin",ios::trunc | ios::in | ios::out | ios::binary);<br>
+ for(int i=0;i&lt;3;i++)<br>
+ {<br>
+&nbsp; obj[i].setdata();<br>
+&nbsp; iofile&lt;&lt;obj[i];<br>
+ }<br>
+ iofile.seekg(0);<br>
+ square new_obj[3];<br>
+ //readthe square data back from the file&nbsp; . states are same as previous
+sq<br>
+<br>
+ for(i=0;i&lt;3;i++)<br>
+ {<br>
+&nbsp; iofile&gt;&gt;new_obj[i];<br>
+&nbsp; new_obj[i].showdata();<br>
+ }<br>
+ getch();<br>
+}<br>
+<br>
+</body>
+</html>

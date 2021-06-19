@@ -1,0 +1,106 @@
+<!---DocType HTML VINOD KOTIYA s-2 Shrimaya Apartment Sector-B/363 Sarvdharm Colony Bhopal-42.Fone +91-0755-2794428 --->
+<HTML>
+      <HEAD><TITLE> VIN Script Generator </TITLE>
+
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// --->
+<!---                 COPY THE SCRIPT FROM HERE AND APPLY ON YOUR PAGE INSIDE  HEAD --->
+<!--- Contact me for more scripts,source code,viruses,softwares at vinodkotiya24@rediffmail.com --> 
+ 
+<script language="JavaScript">
+<!-- fall Script by kurt.grigg@virgin.net
+Amount=20; //Smoothness! depends on image file size, the smaller the size the more you can use!
+//Pre-load your image below!
+Image0=new Image();
+Image0.src="img1.jpg";
+Image1=new Image();
+Image1.src="img2.jpg";
+Image2=new Image();
+Image2.src="img3.jpg";
+grphcs=new Array(3)
+grphcs[0]="img1.jpg"
+grphcs[1]="img2.jpg"
+grphcs[2]="img3.jpg"
+
+Ypos=new Array();
+Xpos=new Array();
+Speed=new Array();
+Step=new Array();
+Cstep=new Array();
+ns=(document.layers)?1:0;
+if (ns){
+for (i = 0; i < Amount; i++){
+var P=Math.floor(Math.random()*grphcs.length);
+rndPic=grphcs[P];
+document.write("<LAYER NAME='sn"+i+"' LEFT=0 TOP=0><img src="+rndPic+"></LAYER>");
+}
+}
+else{
+document.write('<div style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i = 0; i < Amount; i++){
+var P=Math.floor(Math.random()*grphcs.length);
+rndPic=grphcs[P];
+document.write('<img id="si" src="'+rndPic+'" style="position:absolute;top:0px;left:0px">');
+}
+document.write('</div></div>');
+}
+WinHeight=(document.layers)?window.innerHeight:window.document.body.clientHeight;
+WinWidth=(document.layers)?window.innerWidth:window.document.body.clientWidth;
+for (i=0; i < Amount; i++){                                                                
+ Ypos[i] = Math.round(Math.random()*WinHeight);
+ Xpos[i] = Math.round(Math.random()*WinWidth);
+ Speed[i]= Math.random()*3+2;
+ Cstep[i]=0;
+ Step[i]=Math.random()*0.1+0.05;
+}
+function fall(){
+var WinHeight=(document.layers)?window.innerHeight:window.document.body.clientHeight;
+var WinWidth=(document.layers)?window.innerWidth:window.document.body.clientWidth;
+var hscrll=(document.layers)?window.pageYOffset:document.body.scrollTop;
+var wscrll=(document.layers)?window.pageXOffset:document.body.scrollLeft;
+for (i=0; i < Amount; i++){
+sy = Speed[i]*Math.sin(90*Math.PI/180);
+sx = Speed[i]*Math.cos(Cstep[i]);
+Ypos[i]+=sy;
+Xpos[i]+=sx; 
+if (Ypos[i] > WinHeight){
+Ypos[i]=-60;
+Xpos[i]=Math.round(Math.random()*WinWidth);
+Speed[i]=Math.random()*5+2;
+}
+if (ns){
+document.layers['sn'+i].left=Xpos[i];
+document.layers['sn'+i].top=Ypos[i]+hscrll;
+}
+else{
+si[i].style.pixelLeft=Xpos[i];
+si[i].style.pixelTop=Ypos[i]+hscrll;
+} 
+Cstep[i]+=Step[i];
+}
+setTimeout('fall()',10);
+}
+//-->
+</script>
+<body bgcolor="#ffffff" onLoad="fall()">
+
+</HEAD> 
+
+
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// --->
+<!---                 COPY THE SCRIPT UP TO BEFORE /HEAD AND APPLY ON YOUR PAGE --->
+
+     <BODY bgcolor = #ooooff text = #ffff00>   
+
+
+    <H4>Snow<H4>
+<h6>Third party scripts</h6>
+<center><h3>1 : To get the script click on view---->> Source </h3></center>
+<center><h3>The html coding will appear  </h3></center>
+<center><h3>Copy the script Source placed between HEAD tag and paste on your page </h3></center>
+<center><h3>2 :  Or save this page on your harddisk by File->> SaveAs  </h3></center>
+
+
+<font color = red size = 4> To get  more scripts,source code,viruses,softwares contact at vinodkotiya24@rediffmail.com </font>
+
+<hr><font color = white > <center><a href ="..\index.html"> HOME  </a>| <a href ="..\source.html"> BACK </a> | <a href ="..\stand.html"> STAND ALONES </a>| <a href ="..\aboutme.html"> About </a> </center></font><hr> </BODY> 
+ </HTML>

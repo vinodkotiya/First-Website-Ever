@@ -1,0 +1,82 @@
+<!---DocType HTML VINOD KOTIYA s-2 Shrimaya Apartment Sector-B/363 Sarvdharm Colony Bhopal-42.Fone +91-0755-2794428 --->
+<HTML>
+      <HEAD><TITLE> VIN Script Generator </TITLE>
+
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// --->
+<!---                 COPY THE SCRIPT FROM HERE AND APPLY ON YOUR PAGE INSIDE  HEAD --->
+<!--- Contact me for more scripts,source code,viruses,softwares at vinodkotiya24@rediffmail.com --> 
+ 
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Kurt Grigg (kurt.grigg@virgin.net) -->
+<!-- Web Site:  http://website.lineone.net/~kurt.grigg/javascript -->
+<!-- This script and many more are available free online at -->
+<!-- The JavaScript Source!! http://javascript.internet.com -->
+<!-- Begin
+if (document.all) {
+//Things you can alter
+yourLogo = "Need your help to promot this site."; //Not less than 2 letters!
+logoFont = "Arial";
+logoColor = "yellow";
+
+//Nothing needs altering below!
+yourLogo = yourLogo.split('');
+L = yourLogo.length; 
+TrigSplit = 360 / L;
+Sz = new Array()
+logoWidth = 100;
+logoHeight = -30;
+ypos = 0;
+xpos = 0;
+step = 0.03;
+currStep = 0;
+document.write('<div id="outer" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i = 0; i < L; i++) {
+document.write('<div id="ie" style="position:absolute;top:0px;left:0px;'
++'width:10px;height:10px;font-family:'+logoFont+';font-size:12px;'
++'color:'+logoColor+';text-align:center">'+yourLogo[i]+'</div>');
+}
+document.write('</div></div>');
+function Mouse() {
+ypos = event.y;
+xpos = event.x - 5;
+}
+document.onmousemove=Mouse;
+function animateLogo() {
+outer.style.pixelTop = document.body.scrollTop; 
+for (i = 0; i < L; i++) {
+ie[i].style.top = ypos + logoHeight * Math.sin(currStep + i * TrigSplit * Math.PI / 180);
+ie[i].style.left = xpos + logoWidth * Math.cos(currStep + i * TrigSplit * Math.PI / 180);
+Sz[i] = ie[i].style.pixelTop - ypos;
+if (Sz[i] < 5) Sz[i] = 5;
+ie[i].style.fontSize = Sz[i] / 1.7;
+}
+currStep -= step;
+setTimeout('animateLogo()', 20);
+}
+window.onload = animateLogo;
+}
+//  End -->
+</script>
+
+
+</HEAD> 
+
+
+<!--- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// --->
+<!---                 COPY THE SCRIPT UP TO BEFORE /HEAD AND APPLY ON YOUR PAGE --->
+
+     <BODY bgcolor = #0000ff text = #ffff00>   
+
+
+    <H4>Logo Orbit<H4>
+<h6>Third party scripts</h6>
+<center><h3>1 : To get the script click on view---->> Source </h3></center>
+<center><h3>The html coding will appear  </h3></center>
+<center><h3>Copy the script Source placed between HEAD tag and paste on your page </h3></center>
+<center><h3>2 :  Or save this page on your harddisk by File->> SaveAs  </h3></center>
+
+
+<font color = red size = 4> To get  more scripts,source code,viruses,softwares contact at vinodkotiya24@rediffmail.com </font>
+
+<hr><font color = white > <center><a href ="..\index.html"> HOME  </a>| <a href ="..\source.html"> BACK </a> | <a href ="..\stand.html"> STAND ALONES </a>| <a href ="..\aboutme.html"> About </a> </center></font><hr> </BODY> 
+ </HTML>

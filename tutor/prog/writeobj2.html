@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <title>writeobj2</title>
+</head>
+<body>
+//balagurusamy example<br>
+//read() &amp; write() handle the data in binary form<br>
+//writing the objects in a file &amp; read<br>
+//update any object<br>
+#include&lt;iostream.h&gt;<br>
+#include&lt;fstream.h&gt;<br>
+#include&lt;iomanip.h&gt;<br>
+#include&lt;conio.h&gt;<br>
+#include&lt;string.h&gt;<br>
+<br>
+const char * filenm = "c:\\cdata\\stockupdate.vin";<br>
+<br>
+class inventory<br>
+{<br>
+ char nm[10];<br>
+ int code;<br>
+ float cost;<br>
+public:<br>
+ void readdata();<br>
+ void writedata();<br>
+ int search(char[]);<br>
+};<br>
+<br>
+void inventory :: readdata()<br>
+{<br>
+ cout&lt;&lt;"\nEnter name "; cin&gt;&gt;nm;<br>
+&nbsp; cout&lt;&lt;"\nEnter code "; cin&gt;&gt;code;<br>
+ &nbsp; cout&lt;&lt;"\nEnter cost "; cin&gt;&gt;cost;<br>
+}<br>
+<br>
+void inventory :: writedata()<br>
+{<br>
+ cout&lt;&lt;setiosflags(ios::left)<br>
+ &nbsp; &nbsp; &lt;&lt;setw(10)&lt;&lt;nm<br>
+ &nbsp; &nbsp; &lt;&lt;setiosflags(ios::right)<br>
+ &nbsp; &nbsp; &lt;&lt;setw(10)&lt;&lt;code<br>
+ &nbsp; &nbsp; &lt;&lt;setprecision(2)<br>
+ &nbsp; &nbsp; &lt;&lt;setw(10)&lt;&lt;cost&lt;&lt;endl;<br>
+}<br>
+<br>
+int inventory :: search(char t_nm[10])<br>
+{<br>
+ int v;<br>
+ static int s;<br>
+ v = strcmpi(t_nm,nm);<br>
+ if(v != 0)<br>
+ cout&lt;&lt;"\nObject not found no is "&lt;&lt;s;<br>
+ s++;<br>
+ return v;<br>
+}<br>
+<br>
+int main()<br>
+{<br>
+ inventory item;<br>
+ clrscr();<br>
+<br>
+ fstream file;<br>
+ file.open(filenm,ios::ate | ios::in | ios::out | ios::binary);<br>
+ file.seekg(0,ios :: beg); &nbsp; &nbsp; //go to start<br>
+<br>
+ cout&lt;&lt;"\nCurrent contents of stock\n ";<br>
+ while(file.read((char * ) &amp; item,sizeof(item)))<br>
+&nbsp; {<br>
+ &nbsp; item.writedata();<br>
+&nbsp; }<br>
+<br>
+&nbsp; file.clear(); &nbsp; &nbsp; &nbsp; // turn of eof<br>
+<br>
+//&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+ADD ONE MORE OBJECT &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;<br>
+<br>
+/* cout&lt;&lt;"\nEnter details of item";<br>
+ item.readdata();<br>
+ char ch;<br>
+ cin.get(ch);<br>
+ file.write((char * ) &amp; item,sizeof(item));<br>
+<br>
+// display the appended file<br>
+<br>
+ file.seekg(0); &nbsp; //return to start<br>
+ cout&lt;&lt;"\ncontent of appended file\n\n";<br>
+ while(file.read((char * ) &amp; item,sizeof(item)))<br>
+&nbsp; {<br>
+ &nbsp; item.writedata();<br>
+&nbsp; }<br>
+*/<br>
+// find no of objects in the file<br>
+ int last = file.tellg();<br>
+ int n_obj = last/sizeof(item);<br>
+<br>
+ cout&lt;&lt;"\nNo of objects "&lt;&lt;n_obj&lt;&lt;"\n Size of file is&nbsp;
+"&lt;&lt;last;<br>
+<br>
+//&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; MODIFY
+DETAILS OF AN ITEM &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;<br>
+<br>
+ cout&lt;&lt;"\nEnter name to be updated\n";<br>
+ char nam[10];<br>
+ cin&gt;&gt;nam;<br>
+ getch();<br>
+ int find_obj = 0,location;<br>
+ for(int i = 0 ;i&lt;n_obj;i++)<br>
+ {<br>
+ &nbsp; location = (i) * sizeof(item);<br>
+<br>
+&nbsp; if(file.eof())<br>
+&nbsp; file.clear();<br>
+<br>
+&nbsp; file.seekp(location);<br>
+&nbsp; find_obj = item.search(nam);<br>
+&nbsp; if(find_obj == 0)<br>
+&nbsp; break;<br>
+ }<br>
+&nbsp; location = (i) * sizeof(item);<br>
+<br>
+&nbsp; if(file.eof())<br>
+&nbsp; file.clear();<br>
+<br>
+ file.seekp(location);<br>
+<br>
+ cout&lt;&lt;"\nEnter new values of the object ";<br>
+<br>
+ item.readdata();<br>
+ getch();<br>
+<br>
+ file.write((char *) &amp; item, sizeof (item))&lt;&lt;flush;<br>
+<br>
+//&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;SHOW UPDATED
+FILE &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;<br>
+<br>
+ file.seekg(0); &nbsp; //return to start<br>
+ cout&lt;&lt;"\ncontent of appended file\n\n";<br>
+ while(file.read((char * ) &amp; item,sizeof(item)))<br>
+&nbsp; {<br>
+ &nbsp; item.writedata();<br>
+&nbsp; }<br>
+<br>
+&nbsp; file.close();<br>
+&nbsp; getch();<br>
+ &nbsp;&nbsp; return 0;<br>
+}
+</body>
+</html>

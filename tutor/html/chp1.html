@@ -1,0 +1,257 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY
+ BGCOLOR="#0044ff"
+ TEXT="#000000"
+ LINK="#3333DD"
+ VLINK="#3333DD"
+ ALINK="#FF0000">
+<font color = yellow size = 6><center>Learn MS-Dos  </center></font>
+<CENTER>
+<TABLE CELLSPACING=0 CELLPADDING=60 BORDER=0 WIDTH="43%" BGCOLOR="#FFFFFF" style="border-collapse: collapse" bordercolor="#111111">
+<TR>
+<TD width=100%>
+
+<FONT FACE="georgia,verdana,arial,helvetica">
+
+                           <b><font size="4" color="#0000FF"> <u>DOS Overview</u></font></b></PRE>
+<PRE>
+
+</PRE>
+<PRE>MS-DOS ( Microsoft&nbsp; Disk&nbsp; Operating&nbsp; System ), like any other
+
+</PRE>
+<PRE>operating system, manages the flow of information to and from
+
+</PRE>
+<PRE>the various parts of the computer system.
+
+
+</PRE>
+<PRE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                          <font color="#0000FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <font size="3">DOS Functions</font></font>
+
+
+</PRE>
+<PRE>MS-DOS includes commands that perform the following tasks :
+
+</PRE>
+<PRE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Manage files and directories
+
+</PRE>
+<PRE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Maintain disks
+
+</PRE>
+<PRE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Configure hardware
+
+</PRE>
+<PRE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Optimize the use of memory
+
+</PRE>
+<PRE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Customize MS-DOS
+
+
+</PRE>
+<PRE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                        <font size="3">&nbsp;<font color="#0000FF"> DOS Architecture</font>
+</font>
+</PRE>
+<PRE>MS-DOS is partitioned&nbsp; into&nbsp; layers to isolate the logic of the
+
+</PRE>
+<PRE>operating system and the user perception of the system from the
+
+</PRE>
+<PRE>hardware it is running on.
+
+
+</PRE>
+<PRE>These layers are :
+
+</PRE>
+<PRE>&nbsp;&nbsp;&nbsp;&nbsp; # BIOS ( Basic Input Output System )
+
+</PRE>
+<PRE>&nbsp;&nbsp;&nbsp;&nbsp; # DOS Kernel
+
+</PRE>
+<PRE>&nbsp;&nbsp;&nbsp;&nbsp; # Command Processor ( Shell )</PRE>
+<PRE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                            <font size="3" color="#0000FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BIOS</font>
+
+
+</PRE>
+<PRE>The&nbsp; BIOS is specific to the individual computer system&nbsp; and&nbsp; is
+
+</PRE>
+<PRE>provided by the manufacturer of the system. It contains software
+
+</PRE>
+<PRE>to handle the devices such as Console display or Keyboard (CON),
+
+</PRE>
+<PRE>Printer (PRN), System Clock etc.
+
+</PRE>
+<PRE>Most of these primitive&nbsp; BIOS&nbsp; functions&nbsp; are located in the ROM
+
+</PRE>
+<PRE>( Read&nbsp; Only&nbsp; Memory )&nbsp; so&nbsp; that&nbsp; they&nbsp; can&nbsp; be&nbsp; used&nbsp; by&nbsp; other
+
+</PRE>
+<PRE>applications and the system start-up program.</PRE>
+<PRE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                            <font size="3" color="#0000FF">&nbsp;DOS Kernel</font>
+
+
+</PRE>
+<PRE>The&nbsp; Kernel&nbsp; is&nbsp; a&nbsp; software&nbsp; supplied by Microsoft that provides a
+
+</PRE>
+<PRE>collection of hardware independent services called system functions.</PRE>
+<PRE>
+
+</PRE>
+<PRE>These functions include :
+
+</PRE>
+<PRE>&nbsp;&nbsp; # file and record management&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # memory management
+
+</PRE>
+<PRE>&nbsp;&nbsp; # execution of system related programs
+
+</PRE>
+<PRE>&nbsp;&nbsp; # character device input/output
+
+</PRE>
+<PRE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                    <font size="3" color="#0000FF">&nbsp; Command Processor (Shell)</font>
+
+
+
+
+</PRE>
+<PRE>Shell is the user interface to the operating system.
+
+
+
+</PRE>
+<PRE>It processes and executes the user commands, including loading
+
+</PRE>
+<PRE>and executing of other programs from the disk.
+
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                           <font size="3" color="#0000FF">&nbsp;System Start-up</font>
+
+
+
+
+</PRE>
+<PRE>When you switch on the computer, the system start-up program from
+
+</PRE>
+<PRE>ROM&nbsp; carries&nbsp; out the POST (Power-On Self Test). The BIOS is read
+
+</PRE>
+<PRE>into&nbsp; RAM&nbsp; during system initialization as a part of a file named
+
+</PRE>
+<PRE>IO.SYS. The DOS kernel (MSDOS.SYS file),followed by the DOS shell
+
+</PRE>
+<PRE>(COMMAND.COM file) are&nbsp; then&nbsp; read into memory from the secondary
+
+</PRE>
+<PRE>storage&nbsp; device (i.e. either a&nbsp; floppy disk or a hard disk). This
+
+</PRE>
+<PRE>process is known as booting the system.
+
+
+
+</PRE>
+<PRE>While booting the&nbsp; system the secondary storage device from where
+
+</PRE>
+<PRE>the&nbsp; IO.SYS, kernel&nbsp; and&nbsp; shell&nbsp; are loaded is referred to as the
+
+</PRE>
+<PRE>boot disk. The first floppy drive in the&nbsp; system is generally re-
+
+</PRE>
+<PRE>ferred to as the drive A, the second floppy drive as the drive B,
+
+</PRE>
+<PRE>and&nbsp; the&nbsp; hard disk&nbsp; drive as the drive C. Depending on the&nbsp; boot
+
+</PRE>
+<PRE>disk&nbsp; used, the system at the end of&nbsp; booting prompts the user by
+
+</PRE>
+<PRE>displaying&nbsp; either A&gt; or C&gt; on the monitor.
+
+
+
+
+</PRE>
+<PRE>When you get either A&gt; or C&gt; prompt, it indicates that the system
+
+</PRE>
+<PRE>is now ready to accept commands from the user.
+
+</PRE>
+<PRE>To boot the system, your boot&nbsp; disk or&nbsp; boot diskette should have
+
+</PRE>
+<PRE>the following files :
+
+</PRE>
+<PRE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # IO.SYS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # MSDOS.SYS
+
+</PRE>
+<PRE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # COMMAND.COM
+
+</PRE>
+<PRE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                      <font color="#0000FF" size="3">&nbsp;Information Management</font>
+
+
+
+</PRE>
+<PRE>The information on your computer is stored in files.
+
+
+</PRE>
+<PRE>The instructions used to run a program are stored in program files,
+
+</PRE>
+<PRE>and the information/data you create by using a program is stored in
+
+</PRE>
+<PRE>data files.
+
+
+
+							<b><font size="4" color="#00FFFF">
+<a href="chp2.html">NEXT -&gt;&gt;</a> </font></b>
+
+
+
+</PRE>
+
+
+<PRE><a href="index.html"><font size="4">INDEX</font></a>
+
+
+
+</PRE>
+
+
+</FONT>
+</TD>
+</TR>
+</TABLE>
+</CENTER>
+
+</TABLE>
+
+</BODY>
+</HTML>

@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <title>ovrldio</title>
+</head>
+<body>
+/<font color="#ff0000">/ overloading istream and ostream operator<br>
+// ostream&amp; operator &lt;&lt; (ostream&amp;, class_type); &nbsp; //parameter
+by value<br>
+// istream&amp; operator &gt;&gt; (istream&amp;, class_type&amp;);&nbsp;
+//parameter must be by referance</font><br>
+<br>
+#include&lt;iostream.h&gt;<br>
+#include&lt;conio.h&gt;<br>
+#include&lt;string.h&gt;<br>
+<br>
+class person<br>
+{<br>
+ char name[20];<br>
+ int age;<br>
+public:<br>
+ char* getname();<br>
+ int getage();<br>
+ void setname(char* name_in);<br>
+ void setage(int age_in);<br>
+};<br>
+<br>
+char* person::getname()<br>
+{<br>
+ return name;<br>
+}<br>
+int person::getage()<br>
+{<br>
+ return age;<br>
+}<br>
+void person::setname(char* name_in)<br>
+{<br>
+ strncpy(name,name_in,19);<br>
+ name[19]='/0';<br>
+}<br>
+void person::setage(int age_in)<br>
+{<br>
+ age = age_in;<br>
+}<br>
+//overloaded &gt;&gt;&nbsp; to input of person objects<br>
+istream&amp; operator &gt;&gt; (istream&amp; s,person &amp;x)<br>
+{<br>
+ char temp_name[20];<br>
+ int temp_age;<br>
+ cout&lt;&lt;"\nEnter name";<br>
+ s.get(temp_name,19); &nbsp;&nbsp; //get is used to handle embedded spaces<br>
+ cout&lt;&lt;"\nEnter age";<br>
+ s&gt;&gt;temp_age;<br>
+ x.setname(temp_name);<br>
+ x.setage(temp_age);<br>
+ return s;<br>
+}<br>
+//overloaded &lt;&lt; to handle the output of person objects<br>
+ostream&amp; operator &lt;&lt; (ostream&amp; s, person x)<br>
+{<br>
+ return s&lt;&lt;"Name: "&lt;&lt;x.getname()&lt;&lt;"\nAge: "&lt;&lt;x.getage();<br>
+}<br>
+void main()<br>
+{<br>
+ clrscr();<br>
+ person obj;<br>
+ cin&gt;&gt;obj;<br>
+ cout&lt;&lt;obj;<br>
+ getch();<br>
+}<br>
+<br>
+</body>
+</html>

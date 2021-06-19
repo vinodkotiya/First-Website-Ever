@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <title>readfile</title>
+</head>
+<body>
+/* READFILE.*&nbsp; Borland C++ 3.0<br>
+<br>
+ &nbsp; Copywrite (c) 2001 - ? VINOD KOTIYA Enternational. All rights <br>
+<br>
+unreserved.<br>
+<br>
+ &nbsp; From the command line, use:<br>
+<br>
+*/<br>
+#include&lt;fstream.h&gt;<br>
+#include&lt;stdlib.h&gt;<br>
+#include&lt;conio.h&gt;<br>
+#include&lt;iostream.h&gt;<br>
+void main()<br>
+{<br>
+ clrscr();<br>
+ char n,nm[20],a[80];<br>
+ cout&lt;&lt;"Enter name of file to be read with correct path &amp; <br>
+<br>
+extension\n\t\t\t";<br>
+ cin&gt;&gt;nm;<br>
+ ifstream obj(nm);<br>
+ if(obj.fail())<br>
+ {<br>
+&nbsp; cout&lt;&lt;"\nfile can't be opened";<br>
+&nbsp; getch();<br>
+&nbsp; exit(0);<br>
+ }<br>
+ while(!obj.eof())<br>
+ {<br>
+&nbsp; obj.getline(a,79);<br>
+&nbsp; cout&lt;&lt;a&lt;&lt;endl; getch();<br>
+&nbsp; }<br>
+&nbsp; obj.close();<br>
+&nbsp; cout&lt;&lt;"\nAre you want to continue ? Y/N..";<br>
+&nbsp; cin&gt;&gt;n;<br>
+&nbsp; if(n=='y'||n=='Y')<br>
+&nbsp; {<br>
+ &nbsp; main();<br>
+ &nbsp; }<br>
+ &nbsp; else<br>
+ &nbsp;&nbsp; {<br>
+ &nbsp;&nbsp; getch();<br>
+ &nbsp;&nbsp; }<br>
+<br>
+<br>
+</body>
+</html>
